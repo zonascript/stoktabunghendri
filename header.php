@@ -36,6 +36,7 @@ include 'db/pdo.php';
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About</a></li>
+        <li><a href="<?php echo $base_url;?>/logout.php">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

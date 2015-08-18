@@ -1,9 +1,18 @@
 <?php
 // koneksi ke database
 
-//session_start();
-global $transaksi;
+session_start();
 $base_url = "http://localhost/stoktabunghendri";
+
+if(!isset($_SESSION['username'])){
+	$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	if($actual_link != $base_url."/login.php") {
+		header("Location: $base_url/login.php");
+	}
+}
+
+global $transaksi;
+//$base_url = "http://localhost/stoktabunghendri";
 function testdb_connect() {
 $dbh = new PDO("mysql:host=localhost;dbname=stoktabungtmp", "root", "");
      return ($dbh);
@@ -39,6 +48,14 @@ function editCustomer($a,$b,$c,$d) {
 	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d));
 	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($affected_rows);
+}
+
+function getDataUser($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("SELECT * FROM user_permit WHERE username=:field1");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
 }
 
 //function input_jumlah($a,$b) {

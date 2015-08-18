@@ -36,6 +36,13 @@ include 'db/pdo.php';
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About</a></li>
+        <?php 
+        if($_SESSION['permission']=="admin"){
+        ?>
+        	<li><a href="<?php echo $base_url;?>/create_user.php">Create User</a></li>
+        <?php 
+        }
+        ?>
         <li><a href="<?php echo $base_url;?>/logout.php">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->

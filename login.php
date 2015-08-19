@@ -9,7 +9,7 @@ include 'header.php';
 		  <tr>
 		  	<td><span>username : </span></td>
 		  	<!-- td><input type="text" name="username" id="username" onkeydown="if (event.keyCode == 13) document.getElementById('click').click()"/></td-->
-		  	<td><input type="text" name="username" id="username"/></td>
+		  	<td><input type="text" name="username" id="username" autofocus="autofocus" /></td>
 		  </tr>
 		  <tr>
 		  	<td><span>password : </span></td>

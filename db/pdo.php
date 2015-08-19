@@ -34,6 +34,14 @@ function input_customer($a,$b,$c) {
 	return($affected_rows);
 }
 
+function input_user($a,$b,$c) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("INSERT INTO user_permit (username,password,permission) VALUES(:field1,:field2,:field3)");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c));
+	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($affected_rows);
+}
+
 function editBarang($a,$b,$c,$d,$e,$f) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("UPDATE barang SET no_seri=:field2 ,no_ketok=:field3 ,harga_dasar=:field4 ,harga_jual=:field5 ,status=:field6 WHERE no_id=:field1");
@@ -54,6 +62,14 @@ function getDataUser($a) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("SELECT * FROM user_permit WHERE username=:field1");
 	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
+function getAllDataUser() {
+	$db = testdb_connect();
+	$stmt = $db->query("SELECT * FROM user_permit");
+//	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);
 }

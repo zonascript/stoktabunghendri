@@ -58,9 +58,25 @@ function editCustomer($a,$b,$c,$d) {
 	return($affected_rows);
 }
 
+function editUser($a,$b,$c,$d) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("UPDATE user_permit SET username=:field2 ,password=:field3 ,permission=:field4 WHERE no_id=:field1");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d));
+	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($affected_rows);
+}
+
 function getDataUser($a) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("SELECT * FROM user_permit WHERE username=:field1");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
+function getDataUserById($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("SELECT * FROM user_permit WHERE no_id=:field1");
 	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);
@@ -236,6 +252,14 @@ function deleteCustomer($a) {
 	return($fetch_array);
 }
 
+
+function deleteUser($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("DELETE FROM user_permit WHERE no_id=:field1");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
 //function input_transaksi($a) {
 //	$db = testdb_connect();
 //	$stmt = $db->prepare("INSERT INTO transaksi (tanggal,kode_barang,nama_barang,nama_konsumen,alamat,harga_jual,jumlah_dibeli) VALUES(:field1,:field2,:field3,:field4,:field5,:field6,:field7)");

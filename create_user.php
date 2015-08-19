@@ -51,6 +51,10 @@
 					echo "<span class='input_failed'>password belum diisi</span>";
 				} elseif ($_GET['empty']=="permission") {
 					echo "<span class='input_failed'>pilih permission user</span>";
+				} elseif (isset($_GET['edit'])) {
+					echo "<span class='input_success'>user dengan username ".$_GET['edit']." telah diedit</span>";
+				} elseif (isset($_GET['hapus'])) {
+					echo "<span class='input_success'>user dengan username ".$_GET['hapus']." telah dihapus</span>";
 				} else {
 					
 				}

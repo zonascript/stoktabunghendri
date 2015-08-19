@@ -90,6 +90,14 @@ function getAllDataUser() {
 	return($fetch_array);
 }
 
+function getMasaAktifTabung() {
+	$db = testdb_connect();
+	$stmt = $db->query("SELECT * FROM one_click_setting WHERE setting_name='masa aktif tabung'");
+//	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 //function input_jumlah($a,$b) {
 //	$db = testdb_connect();
 //	$stmt = $db->prepare("INSERT INTO stok_barang (kode_barang,jumlah_stok) VALUES(:field1,:field2)");

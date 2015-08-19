@@ -54,7 +54,22 @@ $barangs = getBarang();
 	?>
 	</div>
 	</div>
-
+	
+	<div class="text-center">
+		<?php 
+		if ($_SESSION['permission']=="admin"|$_SESSION['permission']=="owner"):
+			$query_masa_aktif_tabung = getMasaAktifTabung();
+			foreach ($query_masa_aktif_tabung as $row) {
+				$masa_aktif_tabung = $row['value'];
+			}
+		?>
+		<span>Masa Aktif Tabung : <?php echo $masa_aktif_tabung;?> hari <button>Edit</button></span>
+		
+		<?php 
+		endif;
+		?>
+	</div>
+	
   </div>
   
 </div><!-- /.container -->

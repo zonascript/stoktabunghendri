@@ -20,7 +20,7 @@
 		<h2>Create User</h2>
 		<form name="create_user" method="post" action="user_create.php">
 		<div>
-			<span>Username </span><span><input type="text" name="username"/></span> 
+			<span>Username </span><span><input type="text" name="username" autofocus="autofocus"/></span> 
 		</div>
 		<div>
 			<span>Password </span><span><input type="text" name="password"/></span> 

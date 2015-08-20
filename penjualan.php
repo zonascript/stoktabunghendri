@@ -21,6 +21,11 @@ $transaksis= getTransaksi();
 	  </tr>
 	
 	 <?php 
+	 $values = getMasaAktifTabung();
+	 $day = $values[0]['value'];
+	 echo $day;
+	 $yellow = $day - ($day/3);
+	 echo $yellow;
 	foreach($transaksis as $row)
 	{
 		$now=time();
@@ -28,9 +33,9 @@ $transaksis= getTransaksi();
 		$datediff = $now - $selling_date;
 		$days = floor($datediff/(60*60*24));
 	//	var_dump($row);
-		if($days>=20 && $days<30 && $row['status']=='terjual'){
+		if($days>=$yellow && $days<$day-1 && $row['status']=='terjual'){
 			echo "<tr style='background:yellow'>";
-		} elseif ($days>=30 && $row['status']=='terjual'){
+		} elseif ($days>=$day-1 && $row['status']=='terjual'){
 			echo "<tr style='background:red'>";
 		} else {
 			echo "<tr>";

@@ -98,6 +98,14 @@ function getMasaAktifTabung() {
 	return($fetch_array);
 }
 
+function updateMasaAktifTabung($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("UPDATE one_click_setting SET value=:field1 WHERE setting_name='masa aktif tabung'");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 //function input_jumlah($a,$b) {
 //	$db = testdb_connect();
 //	$stmt = $db->prepare("INSERT INTO stok_barang (kode_barang,jumlah_stok) VALUES(:field1,:field2)");

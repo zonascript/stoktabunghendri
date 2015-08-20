@@ -38,6 +38,7 @@ include 'db/pdo.php';
         <li><a href="#">About</a></li>
         <?php 
         if($_SESSION['permission']=="admin"){
+        
         ?>
         	<li><a href="<?php echo $base_url;?>/create_user.php">Create User</a></li>
         <?php 

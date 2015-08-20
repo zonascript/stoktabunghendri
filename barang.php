@@ -83,10 +83,11 @@ $barangs = getBarang();
 		<?php 
 		endif;
 		?>
-	</div>
-	<div class="text-center" id="txtHintExpired">
+		<div class="text-center" id="txtHintExpired">
 		
+		</div>
 	</div>
+	
 	
   </div>
   

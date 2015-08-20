@@ -29,10 +29,26 @@ $barangs = getDataBarang($no_seri);
 	<div>
 		<span>Harga Jual : </span> <input type="text" name="harga_jual" value="<?php echo $row['harga_jual']?>"/>
 	</div>
-	<!-- div>
-		<span>Status : </span> <input type="text" name="status" value="<?php //echo $row['status']?>"/>
-	</div-->
 	<?php 
+	if ($_SESSION['permission']=="admin"|$_SESSION['permission']=="owner"):
+	?>
+	<div>
+	<span>Status : </span>
+	<select name="status" id="status">
+	<option value=""></option>
+	<option value="Available" <?php if ($row['status']=="Available"){echo"selected";}?>>Available</option>
+	<option value="Not Available" <?php if ($row['status']=="Not Available"){echo"selected";}?>>Not Available</option>
+	<option value="Refill" <?php if ($row['status']=="Refill"){echo"selected";}?>>Not Available</option>
+	</select>
+	</div>
+	<?php 
+	else:
+	?>
+	<div>
+		<input type="hidden" name="status" value="<?php echo $row['status']?>"/>
+	</div>
+	<?php 
+	endif;
 	endforeach;
 	?>
 	<input type="submit" name="submit" value="Edit Data Barang"/>

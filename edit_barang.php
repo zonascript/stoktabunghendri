@@ -29,9 +29,9 @@ $barangs = getDataBarang($no_seri);
 	<div>
 		<span>Harga Jual : </span> <input type="text" name="harga_jual" value="<?php echo $row['harga_jual']?>"/>
 	</div>
-	<div>
-		<span>Status : </span> <input type="text" name="status" value="<?php echo $row['status']?>"/>
-	</div>
+	<!-- div>
+		<span>Status : </span> <input type="text" name="status" value="<?php //echo $row['status']?>"/>
+	</div-->
 	<?php 
 	endforeach;
 	?>

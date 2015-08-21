@@ -5,3 +5,9 @@ table {
 .login_alert {
 	color: red;
 }
+
+.inner-faktur-choice {
+	padding: 10px 0 10px;
+	text-align: left; 
+	margin-left: 30px;
+}

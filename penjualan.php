@@ -23,9 +23,9 @@ $transaksis= getTransaksi();
 	 <?php 
 	 $values = getMasaAktifTabung();
 	 $day = $values[0]['value'];
-	 echo $day;
+	 //echo $day;
 	 $yellow = $day - ($day/3);
-	 echo $yellow;
+	 //echo $yellow;
 	foreach($transaksis as $row)
 	{
 		$now=time();
@@ -54,283 +54,36 @@ $transaksis= getTransaksi();
 	?>
 	</table>
 	
-	<?php
-	$barangs = getBarangAvail();
-	$customers = getCustomer();
-	?>
 	<script type="text/javascript">
-	function calculate()
-	{
-		var x = document.getElementById('harga1').textContent;
-	//	var y = x.textContent;
-		document.getElementById("test").innerHTML = x;
+	function totalTabung(){
+		//document.getElementById("txtHintTabung").innerHTML+= "halo"; 
+		var str = document.getElementById("totalTabung").value;
+		//document.getElementById("txtHintTabung").innerHTML= '<?php for($i=0;$i<'+x';$i++){echo "halo";}?>'; 
+		var xmlhttp;    
+		if (str=="")
+		  {
+		  document.getElementById("txtHintTabung").innerHTML="";
+		  return;
+		  }
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		    document.getElementById("txtHintTabung").innerHTML=xmlhttp.responseText;
+		    }
+		  }
+		xmlhttp.open("GET","buat_faktur.php?jumlah_tabung="+str,true);
+		xmlhttp.send();
 	}
-	window.onload = calculate;
-	</script>
-	<script>
-	function showBarang1(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang1").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang1").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi1.php?no_seri="+str,true);
-	xmlhttp.send();
-	
-	}
-	function showBarang2(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang2").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang2").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi2.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang3(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang3").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang3").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi3.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang4(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang4").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang4").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi4.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang5(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang5").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang5").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi5.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang6(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang6").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang6").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi6.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang7(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang7").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang7").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi7.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang8(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang8").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang8").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi8.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang9(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang9").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang9").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi9.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	function showBarang10(str)
-	{
-	var xmlhttp;    
-	if (str=="")
-	  {
-	  document.getElementById("txtHintBarang10").innerHTML="";
-	  return;
-	  }
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("txtHintBarang10").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","barang_transaksi10.php?no_seri="+str,true);
-	xmlhttp.send();
-	}
-	
-	
+
 	function showCustomer(str)
 	{
 	var xmlhttp;    
@@ -357,124 +110,12 @@ $transaksis= getTransaksi();
 	xmlhttp.open("GET","customer_transaksi.php?nama_cust="+str,true);
 	xmlhttp.send();
 	}
-	
-	document.getElementById("test").innerHTML = "New text!";
-	
 	</script>
 	
-	
-	
-	<form action="">
-	<span>Tabung 1 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang1(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 2 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang2(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 3 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang3(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 4 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang4(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 5 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang5(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 6 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang6(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 7 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang7(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 8 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang8(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 9 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang9(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	<form action="">
-	<span>Tabung 10 : </span>
-	<select name="pilih_barang" id="barang" onchange="showBarang10(this.value)">
-	<option value=""></option>
-	<?php foreach($barangs as $row) :?>
-	<option value="<?php echo $row['no_seri'];?>"><?php echo $row['no_seri'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
-	
-	<form action="">
-	<span>Customer : </span>
-	<select name="pilih_customer" id="customer" onchange="showCustomer(this.value)">
-	<option value=""></option>
-	<?php foreach($customers as $row) :?>
-	<option value="<?php echo $row['nama_cust'];?>"><?php echo $row['nama_cust'];?></option>
-	<?php endforeach;?>
-	</select>
-	</form>
-	
+	<div>
+		<span>Jumlah Tabung Keluar :  <input type='text' name='total_tabung' id='totalTabung' onkeydown="if (event.keyCode == 13) totalTabung()"/> <button id="click" onclick="totalTabung()">Pilih Tabung</button></span>
+	</div>
+
 	<?php 
 	$current_date = explode("/", date("Y/m/"));
 	//var_dump($current_date);
@@ -534,91 +175,16 @@ $transaksis= getTransaksi();
 	
 	<form name="input_penjualan" method="post" action="penjualan_input.php">
 	<div id="po" style="width:640px;">
-	<div class="container" style="width: 100%; border:2px solid #000;">
-		<div class="title" style="text-align: left; margin-left: 30px; margin-top:3%;">Purchasing Order Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>
-		<div class="title" style="text-align: left; margin-left: 30px;">Nomor Faktur: <?php echo $po_fak;?> <input type="hidden" name="po_fak" value="<?php echo $po_fak;?>"/></div>
-	<div id="txtHintCustomer">
-		<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nama : </div>
-		<div class="cust_bio" style="text-align: left; margin-left: 30px;">Alamat : </div>
-		<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nomor Telepon : </div>
-	</div>
-	
-		<div class="table" style="padding:3%;">
-			<table id="mytable" border="1" cellpadding="10" cellspacing="0" width="100%">
-			  <tr>
-			  	<th>No</th>
-			    <th>Nomor Seri</th>
-			    <th>Nomor Ketok</th>
-			    <th>Harga</th>
-			  </tr>
-			  <tr id="txtHintBarang1">
-			  	<td style="border-bottom:none;"></td>
-			    <td style="border-bottom:none;"></td>
-			    <td style="border-bottom:none;"></td>
-			    <td style="border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang2">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang3">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang4">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang5">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang6">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang7">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang8">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr style="border: none;" id="txtHintBarang9">
-			  	<td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			    <td style="border-top:none; border-bottom:none;"></td>
-			  </tr>
-			  <tr  id="txtHintBarang10">
-			  	<td style="border-top:none;"></td>
-			    <td style="border-top:none;"></td>
-			    <td style="border-top:none;"></td>
-			    <td style="border-top:none;"></td>
-			  </tr>
-	
-			  <!-- tr>
-			  	<td colspan="3" style="text-align: right; padding-right:4%; font-weight:bold;">Total</td>
-			    <td><span id="test"></span></td>
-			  </tr-->	
-		
-			</table>
+		<div class="container" style="width: 100%; border:2px solid #000;">
+			<div class="title" style="text-align: left; margin-left: 30px; margin-top:3%;">Purchasing Order Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>
+			<div class="title" style="text-align: left; margin-left: 30px;">Nomor Faktur: <?php echo $po_fak;?> <input type="hidden" name="po_fak" value="<?php echo $po_fak;?>"/></div>
+		<div id="txtHintCustomer">
+			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nama : </div>
+			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Alamat : </div>
+			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nomor Telepon : </div>
 		</div>
+		<div id="txtHintTabung"></div>
+		
 		<input type="hidden" name="status" value="terjual"/>
 		<div class="button" style="text-align: left; margin-left: 30px; margin-top:3%;">
 		<input type="submit" name="submit" value="Input Transaksi"/>

@@ -160,6 +160,14 @@ function getDataBarang($a) {
 	return($fetch_array);
 }
 
+function getDataOneBarang() {
+	$db = testdb_connect();
+	$stmt = $db->query("SELECT * FROM barang LIMIT 1");
+	//$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function getDataCustomer($a) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("SELECT * FROM customer WHERE nama_cust=:field1");

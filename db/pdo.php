@@ -227,6 +227,23 @@ function getTransaksi() {
 	return($fetch_array);
 }
 
+function getTransaksiRefil() {
+	$db = testdb_connect();
+	$stmt = $db->query("SELECT * FROM transaksi_refil ORDER BY no_transaksi ASC");
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
+function getNoPO() {
+	$db = testdb_connect();
+//	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");
+	$stmt = $db->query("SELECT no_po FROM transaksi");
+	//$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
+
 function getTransaksiTerjual() {
 	$db = testdb_connect();
 //	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");

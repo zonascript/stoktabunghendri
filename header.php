@@ -33,6 +33,7 @@ include 'db/pdo.php';
         <li><a href="<?php echo $base_url;?>/customer.php">Customer</a></li>
         <li><a href="<?php echo $base_url;?>/penjualan.php">Penjualan</a></li>
         <li><a href="<?php echo $base_url;?>/retur.php">Retur Penjualan</a></li>
+        <li><a href="<?php echo $base_url;?>/refil.php">Refil Tabung</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About</a></li>

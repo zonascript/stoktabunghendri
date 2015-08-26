@@ -1,5 +1,5 @@
 <?php
-include 'db/pdo.php';
+include 'header.php';
 
 $transaksis= getTransaksiRefil();
 ?>

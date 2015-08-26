@@ -6,6 +6,7 @@ $base_url = "http://localhost/stoktabunghendri";
 
 if(!isset($_SESSION['username'])){
 	$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	//$_SESSION['actual_link']=$actual_link;
 	if($actual_link != $base_url."/login.php") {
 		header("Location: $base_url/login.php");
 	}
@@ -227,6 +228,15 @@ function getTransaksi() {
 	return($fetch_array);
 }
 
+function getTransaksiPerPo($a) {
+	$db = testdb_connect();
+//	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");
+	$stmt = $db->prepare("SELECT * FROM transaksi WHERE transaksi.no_po = :field1 ORDER BY no_transaksi ASC");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function getTransaksiRefil() {
 	$db = testdb_connect();
 	$stmt = $db->query("SELECT * FROM transaksi_refil ORDER BY no_transaksi ASC");
@@ -237,7 +247,7 @@ function getTransaksiRefil() {
 function getNoPO() {
 	$db = testdb_connect();
 //	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");
-	$stmt = $db->query("SELECT no_po FROM transaksi");
+	$stmt = $db->query("SELECT no_po FROM transaksi GROUP BY no_po");
 	//$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

@@ -8,14 +8,14 @@ if(isset($no_seri)):
 		$tgl_kembali = date("Y/m/d");
 		//echo $tgl_kembali;
 		updateBarangMasuk($row);
-		$retur = updateTransaksiRetur($row,$tgl_kembali);
+		$retur = updateTransaksiReturRefill($row,$tgl_kembali);
 	endforeach;
 endif;
 
 if(isset($retur)):
-	header("Location: $base_url/retur.php?retur=done");
+	header("Location: $base_url/retur_refill.php?retur=done");
 	//exit();
 else:
 	//echo "tidak ada barang dipilih untuk diretur!!!";
-	header("Location: $base_url/retur.php");
+	header("Location: $base_url/retur_refill.php");
 endif;

@@ -237,7 +237,7 @@ function getTransaksiPerPo($a) {
 	return($fetch_array);
 }
 
-function getTransaksiRefil() {
+function getTransaksiRefill() {
 	$db = testdb_connect();
 	$stmt = $db->query("SELECT * FROM transaksi_refil ORDER BY no_transaksi ASC");
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -263,6 +263,15 @@ function getTransaksiTerjual() {
 	return($fetch_array);
 }
 
+function getTransaksiRefillKeluar() {
+	$db = testdb_connect();
+//	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");
+	$stmt = $db->query("SELECT * FROM transaksi_refil WHERE status = 'refill' ORDER BY no_transaksi ASC");
+	//$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function inputTransaksi($a,$b,$c,$d,$e,$f) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("INSERT INTO transaksi (no_po,no_seri,tgl_keluar,nama_cust,alamat,status) VALUES(:field1,:field2,:field3,:field4,:field5,:field6)");
@@ -271,9 +280,26 @@ function inputTransaksi($a,$b,$c,$d,$e,$f) {
 	return($affected_rows);
 }
 
+function inputTransaksiRefill($a,$b,$c) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("INSERT INTO transaksi_refil (no_seri,tgl_keluar,status) VALUES(:field1,:field2,:field3)");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c));
+	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($affected_rows);
+}
+
+
 function updateBarangKeluar($a) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("UPDATE barang SET status='Not Available' WHERE no_seri=:field1");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
+function updateBarangKeluarRefill($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("UPDATE barang SET status='Refill' WHERE no_seri=:field1");
 	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);
@@ -287,10 +313,18 @@ function updateBarangMasuk($a) {
 	return($fetch_array);
 }
 
-function updateTransaksiRetur($a) {
+function updateTransaksiRetur($a,$b) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("UPDATE transaksi SET status='kembali' WHERE no_seri=:field1");
-	$stmt->execute(array(':field1' => $a));
+	$stmt = $db->prepare("UPDATE transaksi SET tgl_kembali=:field2,status='kembali' WHERE no_seri=:field1");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
+function updateTransaksiReturRefill($a,$b) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("UPDATE transaksi_refil SET tgl_kembali=:field2,status='kembali' WHERE no_seri=:field1");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);
 }

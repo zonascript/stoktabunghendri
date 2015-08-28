@@ -2,6 +2,29 @@
 include 'header.php';
 
 ?>
+
+<script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            //Get the HTML of div
+            var divElements = document.getElementById(divID).innerHTML;
+            //Get the HTML of whole page
+            var oldPage = document.body.innerHTML;
+
+            //Reset the page's HTML with div's HTML only
+            document.body.innerHTML = 
+              "<html><head><title></title></head><body>" + 
+              divElements + "</body>";
+
+            //Print Page
+            window.print();
+
+            //Restore orignal HTML
+            document.body.innerHTML = oldPage;
+
+          
+        }
+    </script>
+    
 <div class="container">
   
   <div class="text-center">
@@ -72,7 +95,7 @@ $barang = getDataOneBarang();
 	</div>
 	</div>
 	<div class="button" style="text-align: left; margin-left: 30px; margin-top:3%;">
-		<input type="submit" name="submit" value="Cetak Faktur"/>
+		<input type="button" name="submit" value="Cetak Faktur" onclick="javascript:printDiv('po')"/>
 	</div>
 	</form>
 

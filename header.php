@@ -29,15 +29,38 @@ include 'db/pdo.php';
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <!--  li class="active"><a href="#">Barang</a></li-->
-        <li><a href="<?php echo $base_url;?>/barang.php">Barang</a></li>
-        <li><a href="<?php echo $base_url;?>/customer.php">Customer</a></li>
-        <li><a href="<?php echo $base_url;?>/penjualan.php">Penjualan</a></li>
-        <li><a href="<?php echo $base_url;?>/retur.php">Retur Penjualan</a></li>
-        <li><a href="<?php echo $base_url;?>/refill.php">Refill Tabung</a></li>
-        <li><a href="<?php echo $base_url;?>/retur_refill.php">Retur Refill Tabung</a></li>
+        <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Barang <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+		        <li><a href="<?php echo $base_url;?>/barang.php">Lihat Barang</a></li>
+		        <li><a href="<?php echo $base_url;?>/input_barang.php">Input Barang</a></li>
+	        </ul>
+        </li>
+        <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customer <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+		        <li><a href="<?php echo $base_url;?>/customer.php">Lihat Customer</a></li>
+		        <li><a href="<?php echo $base_url;?>/input_customer.php">Input Customer</a></li>
+	        </ul>
+        </li>
+        <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Penjualan <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	        	<li><a href="<?php echo $base_url;?>/penjualan.php">Input Penjualan</a></li>
+		        <li><a href="<?php echo $base_url;?>/retur.php">Retur Penjualan</a></li>
+		        <li><a href="<?php echo $base_url;?>/cek_faktur.php">Cek Faktur</a></li>
+	        </ul>
+        </li>
+        <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Refill <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	        	<li><a href="<?php echo $base_url;?>/refill.php">Input Refill Tabung</a></li>
+		        <li><a href="<?php echo $base_url;?>/retur_refill.php">Retur Refill Tabung</a></li>
+	        </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About</a></li>
+        <!-- li><a href="#">About</a></li-->
         <?php 
         if($_SESSION['permission']=="admin"){
         

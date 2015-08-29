@@ -23,7 +23,7 @@ include 'header.php';
 	
 	 <?php 
 	 $values = getMasaAktifTabung();
-	 $day = $values[0]['value'];
+	 $day = $values[0]['value'] - 1;
 	 //echo $day;
 	 $yellow = $day - ($day/3);
 	 //echo $yellow;
@@ -34,7 +34,7 @@ include 'header.php';
 		$datediff = $now - $selling_date;
 		$days = floor($datediff/(60*60*24));
 	//	var_dump($row);
-		if($days>=$yellow && $days<$day-1 && $row['status']=='terjual'){
+		if($days>=$yellow && $days<$day && $row['status']=='terjual'){
 			echo "<tr style='background:yellow'>";
 		} elseif ($days>=$day-1 && $row['status']=='terjual'){
 			echo "<tr style='background:red'>";

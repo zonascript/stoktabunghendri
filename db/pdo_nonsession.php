@@ -4,14 +4,6 @@
 session_start();
 $base_url = "http://localhost/stoktabunghendri";
 
-if(!isset($_SESSION['username'])){
-	$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-	//$_SESSION['actual_link']=$actual_link;
-	if($actual_link != $base_url."/login.php") {
-		header("Location: $base_url/login.php");
-	}
-}
-
 global $transaksi;
 //$base_url = "http://localhost/stoktabunghendri";
 function testdb_connect() {

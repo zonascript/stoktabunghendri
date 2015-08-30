@@ -26,7 +26,7 @@ foreach ($transaksis as $row):
 	  $contenttmp = $i.'. Nomor PO : '.$no_po.'
     Nomor Seri : '.$no_seri.'
     Tanggal Keluar : '.$tgl_keluar.'
-    Sisa Waktu Tabung : '.$remainingdays.'
+    Sisa Waktu Tabung : '.$remainingdays.' hari
     Nama Customer : '.$nama_cust.'
 
 ';

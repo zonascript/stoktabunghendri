@@ -24,10 +24,10 @@ foreach ($transaksis as $row):
 		$nama_cust = $row['nama_cust'];
 		
 	  $contenttmp = $i.'. Nomor PO : '.$no_po.'
-	      Nomor Seri : '.$no_seri.'
-	      Tanggal Keluar : '.$tgl_keluar.'
-	      Sisa Waktu Tabung : '.$remainingdays.'
-	      Nama Customer : '.$nama_cust.'
+	  Nomor Seri : '.$no_seri.'
+	  Tanggal Keluar : '.$tgl_keluar.'
+	  Sisa Waktu Tabung : '.$remainingdays.'
+	  Nama Customer : '.$nama_cust.'
 	      ';
 	  $content .= $contenttmp;
 	  $i++;

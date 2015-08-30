@@ -12,8 +12,8 @@ $day = $values[0]['value'] - 1;
 foreach ($transaksis as $row):
 	$yellow = $day - ($day/3);
 	$now=time();
-	$selling_date = strtotime($row['tgl_keluar']);
-	//$selling_date = strtotime('2015-08-29');
+	//$selling_date = strtotime($row['tgl_keluar']);
+	$selling_date = strtotime('2015-06-29');
 	$datediff = $now - $selling_date;
 	$days = floor($datediff/(60*60*24));
 	$remainingdays = $day - $days;

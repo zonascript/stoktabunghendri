@@ -4,6 +4,9 @@
 session_start();
 $base_url = "http://localhost/stoktabunghendri";
 
+date_default_timezone_set("ASIA/MAKASSAR");
+
+
 if(!isset($_SESSION['username'])){
 	$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 	//$_SESSION['actual_link']=$actual_link;

@@ -4,6 +4,8 @@
 session_start();
 $base_url = "http://localhost/stoktabunghendri";
 
+date_default_timezone_set("ASIA/MAKASSAR");
+
 global $transaksi;
 //$base_url = "http://localhost/stoktabunghendri";
 function testdb_connect() {

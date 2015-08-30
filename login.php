@@ -15,7 +15,7 @@ include 'header.php';
 		  <tr>
 		  	<td><span>password : </span></td>
 		  	<!-- td><input type="text" name="password" id="password" onkeydown="if (event.keyCode == 13) document.getElementById('click').click()"/></td-->
-		  	<td><input type="text" name="password" id="password"/></td>
+		  	<td><input type="password" name="password" id="password"/></td>
 		  </tr>
 		 </table>
  	 	 <!-- button id="click" value="click" onclick="loginCheck(document.getElementById('username').value,document.getElementById('password').value)">Login</button-->	

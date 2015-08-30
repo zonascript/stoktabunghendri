@@ -23,7 +23,12 @@ foreach ($transaksis as $row):
 		$tgl_keluar = $row['tgl_keluar'];
 		$nama_cust = $row['nama_cust'];
 		
-	  $contenttmp = $i.'Nomor PO : '.$no_po.'\n    Nomor Seri : '.$no_seri.'\n    Tanggal Keluar : '.$tgl_keluar.'\n    Sisa Waktu Tabung : '.$remainingdays.'\n    Nama Customer : '.$nama_cust.'\n';
+	  $contenttmp = $i.'. Nomor PO : '.$no_po.'
+	      Nomor Seri : '.$no_seri.'
+	      Tanggal Keluar : '.$tgl_keluar.'
+	      Sisa Waktu Tabung : '.$remainingdays.'
+	      Nama Customer : '.$nama_cust.'
+	      ';
 	  $content .= $contenttmp;
 	  $i++;
 	  $send_email=true;

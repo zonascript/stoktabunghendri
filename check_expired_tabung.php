@@ -28,7 +28,8 @@ foreach ($transaksis as $row):
     Tanggal Keluar : '.$tgl_keluar.'
     Sisa Waktu Tabung : '.$remainingdays.'
     Nama Customer : '.$nama_cust.'
-	      ';
+
+';
 	  $content .= $contenttmp;
 	  $i++;
 	  $send_email=true;

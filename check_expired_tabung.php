@@ -43,7 +43,9 @@ endforeach;
 
 if ($send_email==true):
 	$email_target = "rully.lukman@gmail.com";
-	$user_sender = "From : rully.lukman@gmail.com";
+	$user_sender = 'From: rully.lukman@gmail.com' . "\r\n" .
+               'Reply-To: rully.lukman@gmail.com' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
 	$email_subject = "Warning, Kami Mendeteksi Ada Tabung Yang Hampir Kadaluarsa";
 	$email_message =  "Hi Hendri,\n\nBerikut adalah daftar tabung yang harus segera ditarik, karena sudah masuk masa kadaluarsa (expired).\n\n".$content."\n\nTerima kasih atas perhatiannya.\n\nSalam,\n\n\nAdministrator";
 	mail($email_target,$email_subject,$email_message,$user_sender);

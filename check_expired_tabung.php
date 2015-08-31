@@ -42,7 +42,7 @@ endforeach;
 
 
 if ($send_email==true):
-	$email_target = "rully.lukman@gmail.com";
+	$email_target = "rully.lukman@gmail.com,takazuya87@gmail.com";
 	$user_sender = 'From: rully.lukman@gmail.com' . "\r\n" .
                'Reply-To: rully.lukman@gmail.com' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();

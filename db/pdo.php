@@ -2,7 +2,7 @@
 // koneksi ke database
 
 session_start();
-$base_url = "http://localhost/stoktabunghendri";
+$base_url = "http://92.222.71.15/stoktabunghendri";
 
 date_default_timezone_set("ASIA/MAKASSAR");
 
@@ -18,7 +18,7 @@ if(!isset($_SESSION['username'])){
 global $transaksi;
 //$base_url = "http://localhost/stoktabunghendri";
 function testdb_connect() {
-$dbh = new PDO("mysql:host=localhost;dbname=stoktabungtmp", "root", "");
+$dbh = new PDO("mysql:host=localhost;dbname=stoktabungtmp", "root", "slamdunk23");
      return ($dbh);
 }
 

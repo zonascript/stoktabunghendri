@@ -54,5 +54,3 @@ endif;
 ?>
 
 
-	</table>
-    </div>

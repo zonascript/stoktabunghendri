@@ -1,3 +1,3 @@
 #!/bin/bash
 
-php check_expired_tabung.php
+php /var/www/html/stoktabunghendri/check_expired_tabung.php

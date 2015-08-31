@@ -35,7 +35,7 @@ $transaksis= getTransaksiRefillKeluar();
 	
 	?>
 	</table>
-	
+	<br/><br/>
 	<div>
 		<span><input type="submit" name="submit" value="Retur"> </span>
 	</div>

@@ -67,11 +67,11 @@ include 'header.php';
 	endforeach;
 	?>
 	</table>  
-  	
+  	<br/><br/>
   	<div>
 		<span>Jumlah Tabung Keluar :  <input type='text' name='total_tabung' id='totalTabung' onkeydown="if (event.keyCode == 13) totalTabung()"/> <button id="click" onclick="totalTabung()">Pilih Tabung</button></span>
 	</div>
-	
+	<br/><br/>
 	<form name="input_refill" method="post" action="refill_input.php">
 	<div id="po" style="width:640px;">
 		<div class="container" style="width: 100%; border:2px solid #000;">
@@ -80,10 +80,11 @@ include 'header.php';
 		
 		<input type="hidden" name="status" value="refill"/>
 		<div class="button" style="text-align: left; margin-left: 30px; margin-top:3%;">
-		<input type="submit" name="submit" value="Input Refil"/>
+		
 		</div>
 	</div>
 	</div>
+	<input type="submit" name="submit" value="Input Refil"/>
 	</form>
   
  </div>

@@ -24,27 +24,32 @@
 		<form name="edit_user" method="post" action="user_edit.php">
 		<?php foreach ($users as $row):?>
 		<input type="hidden" name="no_id" value="<?php echo $row['no_id'];?>"/>
-		<div>
-			<span>Username </span><span><input type="text" name="username" value="<?php echo $row['username']?>"/></span> 
-		</div>
-		<div>
-			<span>Password </span><span><input type="text" name="password" value="<?php echo $row['password']?>"/></span> 
-		</div>
-		<div>
-			<span>Permission : </span>
-			<span>
-			<select name="permission" id="permission">
-			<option value=""></option>
-			<option value="admin" <?php if ($row['permission']=="admin"){echo"selected";}?>>Admin</option>
-			<option value="owner" <?php if ($row['permission']=="owner"){echo"selected";}?>>Owner</option>
-			<option value="karyawan" <?php if ($row['permission']=="karyawan"){echo"selected";}?>>Karyawan</option>
-			</select>
-			</span>
-		</div>
+		
+		<table>
+		  <tr>
+		  	<td><span>Username : </span></td>
+		  	<td><input type="text" name="username" value="<?php echo $row['username']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Password : </span></td>
+		  	<td><input type="text" name="password" value="<?php echo $row['password']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Permission : </span></td>
+		  	<td>
+		  		<select name="permission" id="permission">
+				<option value=""></option>
+				<option value="admin" <?php if ($row['permission']=="admin"){echo"selected";}?>>Admin</option>
+				<option value="owner" <?php if ($row['permission']=="owner"){echo"selected";}?>>Owner</option>
+				<option value="karyawan" <?php if ($row['permission']=="karyawan"){echo"selected";}?>>Karyawan</option>
+				</select>  	
+		  	</td>
+		  </tr>
+		</table>
+		
 		<?php endforeach;?>
-		<div>
+		<br/>
 			<span><input type="submit" name="submit" value="Submit"> </span>
-		</div>
 		</form>
 		
 		<div>

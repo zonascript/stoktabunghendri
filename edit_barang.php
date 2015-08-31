@@ -17,40 +17,45 @@ $barangs = getDataBarang($no_seri);
 	foreach ($barangs as $row):
 	?>
 	<input type="hidden" name="no_id" value="<?php echo $row['no_id'];?>"/>
-	<div>
-		<span>Nomor Seri : </span> <input type="text" name="no_seri" value="<?php echo $row['no_seri']?>"/>
-	</div>
-	<div>
-		<span>Nomor Ketok : </span> <input type="text" name="no_ketok" value="<?php echo $row['no_ketok']?>"/>
-	</div>
-	<div>
-		<span>Harga Dasar : </span>  <input type="text" name="harga_dasar" value="<?php echo $row['harga_dasar']?>"/>
-	</div>
-	<div>
-		<span>Harga Jual : </span> <input type="text" name="harga_jual" value="<?php echo $row['harga_jual']?>"/>
-	</div>
+	
+	<table>
+		  <tr>
+		  	<td><span>Nomor Seri : </span></td>
+		  	<td><input type="text" name="no_seri" value="<?php echo $row['no_seri']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Nomor Ketok : </span></td>
+		  	<td><input type="text" name="no_ketok" value="<?php echo $row['no_ketok']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Harga Dasar : </span></td>
+		  	<td><input type="text" name="harga_dasar" value="<?php echo $row['harga_dasar']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Harga Jual : </span></td>
+		  	<td><input type="text" name="harga_jual" value="<?php echo $row['harga_jual']?>"/></td>
+		  </tr>
+		  <tr>
 	<?php 
 	if ($_SESSION['permission']=="admin"|$_SESSION['permission']=="owner"):
 	?>
-	<div>
-	<span>Status : </span>
-	<select name="status" id="status">
+	<td><span>Status : </span></td>
+	<td><select name="status" id="status">
 	<option value=""></option>
 	<option value="Available" <?php if ($row['status']=="Available"){echo"selected";}?>>Available</option>
 	<option value="Not Available" <?php if ($row['status']=="Not Available"){echo"selected";}?>>Not Available</option>
 	<option value="Refill" <?php if ($row['status']=="Refill"){echo"selected";}?>>Not Available</option>
-	</select>
-	</div>
+	</select></td>
 	<?php 
 	else:
 	?>
-	<div>
 		<input type="hidden" name="status" value="<?php echo $row['status']?>"/>
-	</div>
 	<?php 
 	endif;
 	endforeach;
 	?>
+		</tr>
+	</table>
 	<input type="submit" name="submit" value="Edit Data Barang"/>
 	</form>
 

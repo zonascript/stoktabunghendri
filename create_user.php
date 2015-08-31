@@ -19,26 +19,30 @@
 		
 		<h2>Create User</h2>
 		<form name="create_user" method="post" action="user_create.php">
-		<div>
-			<span>Username </span><span><input type="text" name="username" autofocus="autofocus"/></span> 
-		</div>
-		<div>
-			<span>Password </span><span><input type="text" name="password"/></span> 
-		</div>
-		<div>
-			<span>Permission : </span>
-			<span>
-			<select name="permission" id="permission">
-			<option value=""></option>
-			<option value="admin">Admin</option>
-			<option value="owner">Owner</option>
-			<option value="karyawan">Karyawan</option>
-			</select>
-			</span>
-		</div>
-		<div>
+		
+		<table>
+		  <tr>
+		  	<td><span>Username : </span></td>
+		  	<td><input type="text" name="username" autofocus="autofocus"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Password : </span></td>
+		  	<td><input type="text" name="password"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Permission : </span></td>
+		  	<td>
+		  		<select name="permission" id="permission">
+				<option value=""></option>
+				<option value="admin">Admin</option>
+				<option value="owner">Owner</option>
+				<option value="karyawan">Karyawan</option>
+				</select>	  	
+		  	</td>
+		  </tr>
+		</table>
+			<br/>
 			<span><input type="submit" name="submit" value="Submit"> </span>
-		</div>
 		</form>
 		
 		<div>
@@ -60,7 +64,7 @@
 				}
 			?>
 		</div>
-		
+		<br/><br/>
 		<div class="table">
 		<table border="1" cellpadding="10" cellspacing="0" >
 		  <tr>

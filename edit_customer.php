@@ -16,15 +16,21 @@ $customers = getDataCustomer2($no_cust);
 	foreach ($customers as $row):
 	?>
 	<input type="hidden" name="no_cust" value="<?php echo $row['no_cust'];?>"/>
-	<div>
-		<span>Nomor Seri : </span> <input type="text" name="nama_cust" value="<?php echo $row['nama_cust']?>"/>
-	</div>
-	<div>
-		<span>Nomor Ketok : </span> <input type="text" name="alamat" value="<?php echo $row['alamat']?>"/>
-	</div>
-	<div>
-		<span>Harga Dasar : </span>  <input type="text" name="no_telp" value="<?php echo $row['no_telp']?>"/>
-	</div>
+	
+	<table>
+		  <tr>
+		  	<td><span>Nama Customer : </span></td>
+		  	<td><input type="text" name="nama_cust" value="<?php echo $row['nama_cust']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Alamat : </span></td>
+		  	<td><input type="text" name="alamat" value="<?php echo $row['alamat']?>"/></td>
+		  </tr>
+		  <tr>
+		  	<td><span>Nomor Telepon : </span></td>
+		  	<td><input type="text" name="no_telp" value="<?php echo $row['no_telp']?>"/></td>
+		  </tr>
+	</table>
 	
 	<?php 
 	endforeach;

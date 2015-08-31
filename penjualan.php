@@ -113,11 +113,11 @@ include 'header.php';
 	xmlhttp.send();
 	}
 	</script>
-	
+	<br/><br/>
 	<div>
 		<span>Jumlah Tabung Keluar :  <input type='text' name='total_tabung' id='totalTabung' onkeydown="if (event.keyCode == 13) totalTabung()"/> <button id="click" onclick="totalTabung()">Pilih Tabung</button></span>
 	</div>
-
+	<br/><br/>
 	<?php 
 	$current_date = explode("/", date("Y/m/"));
 	//var_dump($current_date);
@@ -189,10 +189,11 @@ include 'header.php';
 		
 		<input type="hidden" name="status" value="terjual"/>
 		<div class="button" style="text-align: left; margin-left: 30px; margin-top:3%;">
-		<input type="submit" name="submit" value="Input Transaksi"/>
+		
 		</div>
 	</div>
 	</div>
+	<input type="submit" name="submit" value="Input Transaksi"/>
 	</form>
 
  </div>

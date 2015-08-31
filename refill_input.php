@@ -22,7 +22,7 @@ if($jumlah_tabung==""){
 }
 
 if(isset($refill)):
-	header("Location: $base_url/refil.php?status=done");
+	header("Location: $base_url/refill.php?status=done");
 endif;
 
 

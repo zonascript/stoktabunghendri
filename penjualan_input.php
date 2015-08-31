@@ -94,7 +94,7 @@ $barang = getDataOneBarang();
 		</div>
 	</div>
 	</div>
-	<div class="button" style="text-align: left; margin-left: 30px; margin-top:3%;">
+	<div class="button" style="margin:auto; margin-top:3%;">
 		<input type="button" name="submit" value="Cetak Faktur" onclick="javascript:printDiv('po')"/>
 	</div>
 	</form>

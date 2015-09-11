@@ -55,9 +55,9 @@ if($jumlah_tabung==""){
 $barang = getDataOneBarang();
 ?>
 <form name="input_penjualan" method="post" action="">
-	<div id="po" style="width:640px;">
-		<div class="container" style="width: 100%; border:2px solid #000;">
-			<h3>Purchasing Order</h3>
+	<div id="po" style="">
+		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:9px;">
+			<h3>Toko Sumber Mas</h3>
 			<div class="title">Nomor Faktur: <?php echo $po_fak;?> <input type="hidden" name="po_fak" value="<?php echo $po_fak;?>"/></div>
 			<div class="title" style="text-align: left; margin-left: 30px; margin-top:3%;">Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>
 		<div id="txtHintCustomer">
@@ -65,18 +65,18 @@ $barang = getDataOneBarang();
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Alamat : <?php echo $alamat;?></div>
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nomor Telepon : <?php echo $no_telp;?></div>
 		</div>
-		<div class="table" style="padding:3%;">
+		<div class="table" style="border:1px solid black;margin-top:3%;margin-bottom:3%;text-align:center;">
 			<table id="mytable" border="1" cellpadding="10" cellspacing="0" width="100%">
 				<tr>
-			    <th>Nama Barang</th>
-			    <th>Jumlah</th>
-			    <th>Harga Satuan</th>
-			    <th>Total Harga</th>
+			    <th style="text-align:center;">Nama Barang</th>
+			    <th style="text-align:center;border-right:1px solid black;">Jumlah</th>
+			    <th style="text-align:center;border-right:1px solid black;">Harga Satuan</th>
+			    <th style="text-align:center;">Total Harga</th>
 			  </tr>
 			  <tr>
 			  	<td>Tabung Oksigen</td>
-			    <td><?php echo $jumlah_tabung;?></td>
-			    <td><?php echo $barang[0]['harga_jual'];?></td>
+			    <td style="border-right:1px solid black;"><?php echo $jumlah_tabung;?></td>
+			    <td style="border-right:1px solid black;"><?php echo $barang[0]['harga_jual'];?></td>
 			    <td><?php echo $jumlah_tabung * $barang[0]['harga_jual'];?></td>
 			  </tr>
 			</table>

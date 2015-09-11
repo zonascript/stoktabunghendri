@@ -27,7 +27,7 @@ table {
 }
 
 .tanda-tangan {
-	margin-top: 30px;
+	margin-top: 45px;
 }
 
 #po {
@@ -46,4 +46,9 @@ table {
 @media print {
 	width: 712px;
 	height: 825px;
+	#header, #footer { display: none !important; }
+	page-break-after:always !important;
+        display:table !important;
+        margin:0 auto !important;
+	margin-top: -20px;
 }

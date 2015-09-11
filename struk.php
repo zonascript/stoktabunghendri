@@ -12,7 +12,7 @@ include 'header2.php';
 
             //Reset the page's HTML with div's HTML only
             document.body.innerHTML = 
-              "<html><head><title></title></head><body>" + 
+              "<html><head><title></title><link href='css/bootstrap.min.css' rel='stylesheet'><link href='css/styles.css' rel='stylesheet'></head><body>" + 
               divElements + "</body>";
 
             //Print Page
@@ -29,8 +29,8 @@ include 'header2.php';
   
   <div class="text-center">
 <form name="input_penjualan" method="post" action="">
-	<div id="po" style="width:640px;">
-		<div class="container" style="width: 100%; border:2px solid #000;">
+	<div id="po" style="">
+		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:9px;">
 			<h3>Purchasing Order</h3>
 			<div class="title">Nomor Faktur: FAK/2015/08/0002</div>
 			<div class="title" style="text-align: left; margin-left: 30px; margin-top:3%;">Tanggal : 2015-08-31</div>
@@ -39,18 +39,18 @@ include 'header2.php';
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Alamat : bnp</div>
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nomor Telepon : 123456</div>
 		</div>
-		<div class="table" style="padding:3%;">
+		<div class="table" style="border:1px solid black;margin-top:3%;margin-bottom:3%;text-align:center;">
 			<table id="mytable" border="1" cellpadding="10" cellspacing="0" width="100%">
 				<tr>
-			    <th>Nama Barang</th>
-			    <th>Jumlah</th>
-			    <th>Harga Satuan</th>
-			    <th>Total Harga</th>
+			    <th style="text-align:center;">Nama Barang</th>
+			    <th style="text-align:center;border-right:1px solid black;">Jumlah</th>
+			    <th style="text-align:center;border-right:1px solid black;">Harga Satuan</th>
+			    <th style="text-align:center;">Total Harga</th>
 			  </tr>
 			  <tr>
 			  	<td>Tabung Oksigen</td>
-			    <td>2</td>
-			    <td>7000</td>
+			    <td style="border-right:1px solid black;">2</td>
+			    <td style="border-right:1px solid black;">7000</td>
 			    <td>14000</td>
 			  </tr>
 			</table>

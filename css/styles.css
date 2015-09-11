@@ -42,3 +42,8 @@ table {
 .error {
 	color: red;
 }
+
+@media print {
+	width: 712px;
+	height: 825px;
+}

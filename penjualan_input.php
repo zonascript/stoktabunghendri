@@ -38,6 +38,8 @@ $no_telp = $_POST['no_telp'];
 $status = $_POST['status'];
 $jumlah_tabung = $_POST['jumlah_tabung'];
 
+echo $_POST['harga_khusus'];
+
 if($jumlah_tabung==""){
 	echo "Tidak ada tabung yang dipilih";
 } else {
@@ -45,14 +47,15 @@ if($jumlah_tabung==""){
 		 if ($_POST['pilih_barang_'.$i.'']==""){
 		 	echo "Tabung ke $i belum diisi<br/>";
 		 } else {
-		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
-		 	inputTransaksi($po_fak,$nomor_seri_tabung,$tanggal,$nama_cust,$alamat,$status);
-		 	updateBarangKeluar($nomor_seri_tabung);
+		 	//$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
+		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$tanggal,$nama_cust,$alamat,$status);
+		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }
 
 $barang = getDataOneBarang();
+$harga_jual_faktur = $barang[0]['harga_jual'];
 ?>
 <form name="input_penjualan" method="post" action="">
 	<div id="po" style="">
@@ -76,8 +79,8 @@ $barang = getDataOneBarang();
 			  <tr>
 			  	<td>Tabung Oksigen</td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_tabung;?></td>
-			    <td style="border-right:1px solid black;"><?php echo $barang[0]['harga_jual'];?></td>
-			    <td><?php echo $jumlah_tabung * $barang[0]['harga_jual'];?></td>
+			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
+			    <td><?php echo $jumlah_tabung * $harga_jual_faktur;?></td>
 			  </tr>
 			</table>
 		</div>

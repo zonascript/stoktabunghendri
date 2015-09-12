@@ -10,6 +10,7 @@ include 'header.php';
   
   <div class="text-center">
   
+	<h3>Lihat Transaksi</h3>
 	<table border="1" cellpadding="10" cellspacing="0">
 	  <tr>
 	    <th>Nomor PO</th>

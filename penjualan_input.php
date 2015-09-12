@@ -37,8 +37,7 @@ $alamat = $_POST['alamat'];
 $no_telp = $_POST['no_telp'];
 $status = $_POST['status'];
 $jumlah_tabung = $_POST['jumlah_tabung'];
-
-echo $_POST['harga_khusus'];
+$harga_khusus = $_POST['harga_khusus'];
 
 if($jumlah_tabung==""){
 	echo "Tidak ada tabung yang dipilih";
@@ -55,7 +54,14 @@ if($jumlah_tabung==""){
 }
 
 $barang = getDataOneBarang();
-$harga_jual_faktur = $barang[0]['harga_jual'];
+if (isset($harga_khusus)){
+	$harga_jual_faktur = $harga_khusus;
+	echo "haga khusus";
+} else {
+	$harga_jual_faktur = $barang[0]['harga_jual'];
+	echo "tidak ada harga khusus";
+}
+
 ?>
 <form name="input_penjualan" method="post" action="">
 	<div id="po" style="">

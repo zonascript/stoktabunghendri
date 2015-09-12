@@ -128,6 +128,7 @@ include 'header.php';
 	<?php 
 	$po = getDataPO();
 	var_dump($po);
+	echo "halo";
 	//var_dump($po);
 	if(empty($po)):
 		$new_po_number = str_pad("1", 4, "0", STR_PAD_LEFT);

@@ -20,7 +20,7 @@
 		  </tr>
 		  <tr>
 		  	<td><span>Nomor Telepon : </span></td>
-		  	<td><input type="text" name="harga_dasar"/><span class="error"> * <?php echo $codeErr;?></span></td>
+		  	<td><input type="text" name="no_telp"/><span class="error"> * <?php echo $codeErr;?></span></td>
 		  </tr>
 	</table>
 	<br/>

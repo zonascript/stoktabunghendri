@@ -190,7 +190,7 @@ function getDataCustomer2($a) {
 
 function getDataPO() {
 	$db = testdb_connect();
-	$stmt = $db->query("SELECT * FROM transaksi WHERE transaksi.status = 'terjual' ORDER BY no_transaksi DESC LIMIT 1");
+	$stmt = $db->query("SELECT * FROM transaksi ORDER BY no_transaksi DESC LIMIT 1");
 	//$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

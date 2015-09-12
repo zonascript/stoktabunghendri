@@ -1,4 +1,3 @@
-oawhoawhoiawhio
 <?php
 include 'header.php';
 
@@ -128,7 +127,6 @@ include 'header.php';
 	<!-- form name="input_transaksi" method="post" action="penjualan_input.php">
 	<?php 
 	$po = getDataPO();
-	var_dump($po);
 	echo "halo";
 	//var_dump($po);
 	if(empty($po)):
@@ -179,7 +177,10 @@ include 'header.php';
 		<span><input type="submit" name="submit" value="Lakukan Transaksi"> </span>
 	</div>
 	</form-->
-	
+	<?php
+		$po = getDataPO();
+	var_dump($po);
+	?>
 	
 	<form name="input_penjualan" method="post" action="penjualan_input.php">
 	<div id="po" style="width:640px;">

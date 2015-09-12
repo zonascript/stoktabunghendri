@@ -127,7 +127,6 @@ include 'header.php';
 	<!-- form name="input_transaksi" method="post" action="penjualan_input.php">
 	<?php 
 	$po = getDataPO();
-	echo "halo";
 	//var_dump($po);
 	if(empty($po)):
 		$new_po_number = str_pad("1", 4, "0", STR_PAD_LEFT);
@@ -177,10 +176,6 @@ include 'header.php';
 		<span><input type="submit" name="submit" value="Lakukan Transaksi"> </span>
 	</div>
 	</form-->
-	<?php
-		$po = getDataPO();
-	var_dump($po);
-	?>
 	
 	<form name="input_penjualan" method="post" action="penjualan_input.php">
 	<div id="po" style="width:640px;">

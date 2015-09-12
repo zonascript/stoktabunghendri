@@ -9,6 +9,10 @@ $status = "Available";
 
 $a= input_barang($no_seri, $no_ketok, $harga_dasar, $harga_jual, $status);
 
+if (isset($a)){
+	header("Location: $base_url/barang.php");
+}
+
 $barangs = getBarang();
 //var_dump($customers);
 ?>

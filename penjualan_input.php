@@ -54,7 +54,7 @@ if($jumlah_tabung==""){
 }
 
 $barang = getDataOneBarang();
-if (isset($harga_khusus)){
+if ($harga_khusus != ""){
 	$harga_jual_faktur = $harga_khusus;
 	echo "haga khusus";
 } else {

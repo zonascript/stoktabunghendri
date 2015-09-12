@@ -141,6 +141,9 @@ include 'header.php';
 			$current_po = explode("/", $row['no_po']);
 		endforeach;
 		//var_dump($current_po);
+		echo $current_date['0'];
+		echo "<br/>";
+		echo $current_po['1'];
 		if($current_date['0'] == $current_po['1'] && $current_date['1'] == $current_po['2']):
 			$new_number = $current_po['3'] +1 ;
 			$new_po_number = str_pad($new_number, 4, "0", STR_PAD_LEFT);

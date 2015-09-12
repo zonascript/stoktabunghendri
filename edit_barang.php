@@ -44,7 +44,7 @@ $barangs = getDataBarang($no_seri);
 	<option value=""></option>
 	<option value="Available" <?php if ($row['status']=="Available"){echo"selected";}?>>Available</option>
 	<option value="Not Available" <?php if ($row['status']=="Not Available"){echo"selected";}?>>Not Available</option>
-	<option value="Refill" <?php if ($row['status']=="Refill"){echo"selected";}?>>Not Available</option>
+	<option value="Refill" <?php if ($row['status']=="Refill"){echo"selected";}?>>Refill</option>
 	</select></td>
 	<?php 
 	else:

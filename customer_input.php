@@ -7,6 +7,10 @@ $no_telp= $_POST['no_telp'];
 
 $a= input_customer($nama_cust, $alamat, $no_telp);
 
+if (isset($a)){
+	header("Location: $base_url/customer.php");
+}
+
 // tampilkan table customer
 
 $customers = getCustomer();

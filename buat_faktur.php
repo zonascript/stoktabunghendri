@@ -29,3 +29,5 @@ for ($i=1; $i<=$jumlah_tabung; $i++) {
 }
 ?>
 <input type="hidden" name="jumlah_tabung" value="<?php echo $jumlah_tabung;?>"/>
+
+<div class="cust_bio" style="text-align: left; margin-left: 30px;">Harga Khusus Per Tabung : <input type="text" name="harga_khusus" /></div>

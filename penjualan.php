@@ -177,7 +177,7 @@ include 'header.php';
 	</div>
 	</form-->
 	
-	<form name="input_penjualan" method="post" action="penjualan_input.php">
+	<form name="input_penjualan" method="post" action="penjualan_input.php" target="_blank">
 	<div id="po" style="width:640px;">
 		<div class="container" style="width: 100%; border:2px solid #000;">
 			<div class="title" style="text-align: left; margin-left: 30px; margin-top:3%;">Purchasing Order Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>

@@ -127,6 +127,7 @@ include 'header.php';
 	<!-- form name="input_transaksi" method="post" action="penjualan_input.php">
 	<?php 
 	$po = getDataPO();
+	var_dump($po);
 	//var_dump($po);
 	if(empty($po)):
 		$new_po_number = str_pad("1", 4, "0", STR_PAD_LEFT);

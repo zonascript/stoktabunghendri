@@ -49,7 +49,7 @@ $barangs = getDataBarang($no_seri);
 	<?php 
 	else:
 	?>
-		<input type="hidden" name="status" value="<?php echo $row['status']?>"/>
+		<input type="text" name="status" value="<?php echo $row['status']?>"/>
 	<?php 
 	endif;
 	endforeach;

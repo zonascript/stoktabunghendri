@@ -1,10 +1,10 @@
 <?php
 include 'db/pdo.php';
 
-$id_kategori = $_POST['id_kategori'];
-var_dump($id_kategori);
+$id_kategori = $_GET['id_kategori'];
+
 $kategoris = getDataKategori($id_kategori);
-var_dump($kategoris);
+echo $kategoris[0]['nama_kategori'];
 //$hapus_kategori = deleteKategori($id_kategori);
 
 //$barangs = getDataBarang($no_seri);

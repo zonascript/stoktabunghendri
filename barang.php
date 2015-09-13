@@ -26,6 +26,7 @@ $barangs = getBarang();
 		    <th>Harga Dasar</th>
 		    <th>Harga Jual</th>
 		    <th>Status</th>
+			<th>Kategori</th>
 		    <th>Action</th>
 		  </tr>
 	<?php 

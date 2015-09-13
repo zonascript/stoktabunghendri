@@ -63,7 +63,6 @@ $barangs = getDataBarang($no_seri);
 			 <?php
 			$kategoris = getKategori();
 			foreach ($kategoris as $row):
-			echo $current_kategori;
 		    ?>
 			<option value="<?php echo $row['nama_kategori'];?>"<?php if ($row['nama_kategori']==$current_kategori){echo"selected";}?>><?php echo $row['nama_kategori'];?></option>
 			<?php

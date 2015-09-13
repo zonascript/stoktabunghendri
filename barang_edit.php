@@ -7,8 +7,9 @@ $no_ketok = $_POST['no_ketok'];
 $harga_dasar = $_POST['harga_dasar'];
 $harga_jual = $_POST['harga_jual'];
 $status = $_POST['status'];
+$kategori = $_POST['kategori'];
 
-$edit_barang= editBarang($no_id, $no_seri, $no_ketok, $harga_dasar, $harga_jual, $status);
+$edit_barang= editBarang($no_id, $no_seri, $no_ketok, $harga_dasar, $harga_jual, $status, $kategori);
 
 //$edit_barang= editBarang($no_id, $no_seri, $no_ketok, $harga_dasar, $harga_jual);
 if (isset($edit_barang)){

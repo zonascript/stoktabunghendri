@@ -62,10 +62,10 @@ function editKategori($a,$b) {
 	return($affected_rows);
 }
 
-function editBarang($a,$b,$c,$d,$e,$f) {
+function editBarang($a,$b,$c,$d,$e,$f,$g) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("UPDATE barang SET no_seri=:field2 ,no_ketok=:field3 ,harga_dasar=:field4 ,harga_jual=:field5 ,status=:field6 WHERE no_id=:field1");
-	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d, ':field5' => $e, ':field6' => $f));
+	$stmt = $db->prepare("UPDATE barang SET no_seri=:field2 ,no_ketok=:field3 ,harga_dasar=:field4 ,harga_jual=:field5 ,status=:field6 ,kategori=:field7 WHERE no_id=:field1");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d, ':field5' => $e, ':field6' => $f, ':field7' => $g));
 	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($affected_rows);
 }

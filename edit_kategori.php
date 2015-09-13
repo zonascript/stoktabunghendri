@@ -3,7 +3,7 @@ include 'header.php';
 
 $id_kategori = $_GET["id_kategori"];
 
-$ketegoris = getDataKategori($id_kategori);
+@$ketegoris = getDataKategori($id_kategori);
 
 //var_dump($barangs);
 ?>

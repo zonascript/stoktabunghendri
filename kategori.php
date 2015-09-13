@@ -17,7 +17,7 @@ include 'header.php';
 		  </tr>
 	<?php 
 	foreach ($kategoris as $kategori):
-		$id_kategori = $kategoris['id_kategori'];
+		$id_kategori = $kategori['id_kategori'];
 	?>
 		<tr>
 	<?php 

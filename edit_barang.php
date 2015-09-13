@@ -15,6 +15,7 @@ $barangs = getDataBarang($no_seri);
 	<form method="post" name="edit_barang" action="barang_edit.php">
 	<?php 
 	foreach ($barangs as $row):
+	$current_kategori = $row['kategori'];
 	?>
 	<input type="hidden" name="no_id" value="<?php echo $row['no_id'];?>"/>
 	
@@ -54,6 +55,21 @@ $barangs = getDataBarang($no_seri);
 	endif;
 	endforeach;
 	?>
+		</tr>
+		<tr>
+			<td><span>Kategori : </span></td>
+			<td><select name="kategori" id="kategori">
+			<option value=""></option>
+			 <?php
+			$kategoris = getKategori();
+			foreach ($kategoris as $row):
+		    ?>
+			<option value="<?php echo $row['nama_kategori'];?>"<?php if ($row['nama_kategori']==$current_kategori){echo"selected";}?>><?php echo $row['nama_kategori'];?></option>
+			<?php
+			endforeach;
+		    ?>
+			</select></td>
+
 		</tr>
 	</table>
 	<input type="submit" name="submit" value="Edit Data Barang"/>

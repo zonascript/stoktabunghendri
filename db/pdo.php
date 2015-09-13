@@ -196,6 +196,13 @@ function getDataPO() {
 	return($fetch_array);
 }
 
+function getKategori() {
+	$db = testdb_connect();
+	$stmt = $db->query("SELECT * FROM kategori ORDER BY no_id ASC");
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function getBarang() {
 	$db = testdb_connect();
 //	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");

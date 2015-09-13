@@ -198,7 +198,7 @@ function getDataPO() {
 
 function getKategori() {
 	$db = testdb_connect();
-	$stmt = $db->query("SELECT * FROM kategori ORDER BY no_id ASC");
+	$stmt = $db->query("SELECT * FROM kategori ORDER BY id_kategori ASC");
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);
 }

@@ -26,12 +26,21 @@
 		  	<td><span>Harga Jual :</span></td>
 		  	<td><input type="text" name="harga_jual"/><span class="error"> * <?php echo $codeErr;?></span></td>
 		  </tr>
-		  <?php
+		  <tr>
+			<td><span>Status : </span></td>
+			<td><select name="status" id="status">
+			<option value=""></option>
+			 <?php
 			$kategoris = getKategori();
 			foreach ($kategoris as $row):
-				echo $row['nama_kategori'];
+		    ?>
+			<option value="<?php echo $row['nama_kategori'];?>"><?php echo $row['nama_kategori'];?></option>
+			<?php
 			endforeach;
-		  ?>
+		    ?>
+			</select></td>
+
+		</tr>
 	</table>
 	<br/>
 	<input type="submit" name="submit" value="Submit"> 

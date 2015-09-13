@@ -3,7 +3,7 @@ include 'header.php';
 
 $id_kategori = $_GET["id_kategori"];
 
-echo $id_kategori;
+//echo $id_kategori;
 
 @$kategoris = getDataKategori($id_kategori);
 
@@ -18,6 +18,7 @@ echo $id_kategori;
 	<?php 
 	foreach ($kategoris	as $row):
 	?>
+	<h3>Edit Kategori</h3>
 	<input type="hidden" name="id_kategori" value="<?php echo $row['id_kategori'];?>"/>
 	
 	<table>

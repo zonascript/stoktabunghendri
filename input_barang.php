@@ -27,7 +27,7 @@
 		  	<td><input type="text" name="harga_jual"/><span class="error"> * <?php echo $codeErr;?></span></td>
 		  </tr>
 		  <tr>
-			<td><span>Status : </span></td>
+			<td><span>Kategori : </span></td>
 			<td><select name="status" id="status">
 			<option value=""></option>
 			 <?php

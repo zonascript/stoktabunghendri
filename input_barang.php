@@ -28,8 +28,9 @@
 		  </tr>
 		  <?php
 			$kategoris = getKategori();
-			var_dump($kategoris);
-		  
+			foreach ($kategoris as $row):
+				echo $row;
+			endforeach;
 		  ?>
 	</table>
 	<br/>

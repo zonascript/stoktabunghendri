@@ -166,7 +166,7 @@ function updateMasaAktifTabung($a) {
 
 function getDataKategori($a) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("SELECT * FROM kategori WHERE no_kategori=:field1");
+	$stmt = $db->prepare("SELECT * FROM kategori WHERE id_kategori=:field1");
 	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

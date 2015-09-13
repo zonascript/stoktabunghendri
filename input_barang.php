@@ -29,7 +29,7 @@
 		  <?php
 			$kategoris = getKategori();
 			foreach ($kategoris as $row):
-				echo $row;
+				echo $row['nama_kategori'];
 			endforeach;
 		  ?>
 	</table>

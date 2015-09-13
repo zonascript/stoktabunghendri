@@ -14,21 +14,7 @@ echo $id_kategori;
   
   <div class="text-center">
   
-	<form method="post" name="edit_kategori" action="kategori_edit.php">
-	<?php 
-	foreach ($kategoris	as $row):
-	?>
-	<input type="hidden" name="id_kategori" value="<?php echo $row['id_kategori'];?>"/>
 	
-	<table>
-		  <tr>
-		  	<td><span>Nama Kategori : </span></td>
-		  	<td><input type="text" name="nama_kategori" value="<?php echo $row['nama_kategori']?>"/></td>
-		  </tr>
-		</tr>
-	</table>
-	<input type="submit" name="submit" value="Edit Data Kategori"/>
-	</form>
 
   </div>
   

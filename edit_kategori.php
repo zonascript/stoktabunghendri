@@ -3,6 +3,8 @@ include 'header.php';
 
 $id_kategori = $_GET["id_kategori"];
 
+echo $id_kategori;
+
 @$kategoris = getDataKategori($id_kategori);
 
 //var_dump($barangs);

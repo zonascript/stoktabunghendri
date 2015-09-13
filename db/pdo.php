@@ -30,10 +30,10 @@ function input_kategori($a) {
 	return($affected_rows);
 }
 
-function input_barang($a,$b,$c,$d,$e) {
+function input_barang($a,$b,$c,$d,$e,$f) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("INSERT INTO barang (no_seri,no_ketok,harga_dasar,harga_jual,status) VALUES(:field1,:field2,:field3,:field4,:field5)");
-	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d, ':field5' => $e));
+	$stmt = $db->prepare("INSERT INTO barang (no_seri,no_ketok,harga_dasar,harga_jual,status,kategori) VALUES(:field1,:field2,:field3,:field4,:field5,:field6)");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d, ':field5' => $e, ':field6' => $f));
 	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($affected_rows);
 }

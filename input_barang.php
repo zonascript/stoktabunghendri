@@ -28,7 +28,7 @@
 		  </tr>
 		  <tr>
 			<td><span>Kategori : </span></td>
-			<td><select name="status" id="status">
+			<td><select name="kategori" id="kategori">
 			<option value=""></option>
 			 <?php
 			$kategoris = getKategori();

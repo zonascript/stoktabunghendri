@@ -22,6 +22,14 @@ $dbh = new PDO("mysql:host=localhost;dbname=stoktabungtmp", "root", "slamdunk23"
      return ($dbh);
 }
 
+function input_kategori($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("INSERT INTO kategori (nama_kategori) VALUES(:field1)");
+	$stmt->execute(array(':field1' => $a));
+	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($affected_rows);
+}
+
 function input_barang($a,$b,$c,$d,$e) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("INSERT INTO barang (no_seri,no_ketok,harga_dasar,harga_jual,status) VALUES(:field1,:field2,:field3,:field4,:field5)");

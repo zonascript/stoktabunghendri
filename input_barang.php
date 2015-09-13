@@ -26,6 +26,11 @@
 		  	<td><span>Harga Jual :</span></td>
 		  	<td><input type="text" name="harga_jual"/><span class="error"> * <?php echo $codeErr;?></span></td>
 		  </tr>
+		  <?php
+			$kategoris = getKategori();
+			var_dump($kategoris);
+		  
+		  ?>
 	</table>
 	<br/>
 	<input type="submit" name="submit" value="Submit"> 

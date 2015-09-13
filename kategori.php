@@ -1,6 +1,8 @@
 <?php
 include 'header.php';
 
+echo "halo";
+
 $kategoris = getKategori();
 ?>
 

@@ -372,6 +372,14 @@ function updateTransaksiReturRefill($a,$b) {
 	return($fetch_array);
 }
 
+function deleteKategori($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("DELETE FROM kategori WHERE id_kategori=:field1");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function deleteBarang($a) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("DELETE FROM barang WHERE no_seri=:field1");

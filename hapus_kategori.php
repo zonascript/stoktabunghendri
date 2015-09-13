@@ -2,7 +2,7 @@
 include 'db/pdo.php';
 
 $id_kategori = $_POST['id_kategori'];
-
+var_dump($id_kategori);
 $kategoris = getDataKategori($id_kategori);
 var_dump($kategoris);
 //$hapus_kategori = deleteKategori($id_kategori);

@@ -34,6 +34,7 @@ include 'db/pdo.php';
 	        <ul class="dropdown-menu">
 		        <li><a href="<?php echo $base_url;?>/barang.php">Lihat Barang</a></li>
 		        <li><a href="<?php echo $base_url;?>/input_barang.php">Input Barang</a></li>
+				<li><a href="<?php echo $base_url;?>/kategori.php">Jenis Barang</a></li>
 	        </ul>
         </li>
         <li class="dropdown">

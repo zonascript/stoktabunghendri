@@ -62,6 +62,11 @@ if ($harga_khusus != ""){
 	echo "tidak ada harga khusus";
 }
 
+for ($i=1; $i<=$jumlah_tabung; $i++) {
+	echo $_POST['pilih_barang_'.$i.''];
+}
+
+
 ?>
 <form name="input_penjualan" method="post" action="">
 	<div id="po" style="">

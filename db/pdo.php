@@ -188,6 +188,14 @@ function getDataBarang($a) {
 	return($fetch_array);
 }
 
+function getDataKategoriBarang($a) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("SELECT kategori FROM barang WHERE no_seri=:field1");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function getDataOneBarang() {
 	$db = testdb_connect();
 	$stmt = $db->query("SELECT * FROM barang LIMIT 1");

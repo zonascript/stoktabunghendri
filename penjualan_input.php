@@ -49,8 +49,8 @@ if($jumlah_tabung==""){
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
 			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
 			$kategori = $kategoris[0]['kategori'];
-		 	inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
-		 	updateBarangKeluar($nomor_seri_tabung);
+		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
+		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }
@@ -87,6 +87,7 @@ if($jumlah_tabung==""){
 			  </tr>
 			  <?php
 				$kategoris = getKategori();
+				$total = 0;
 				foreach ($kategoris as $row):
 					$row_kategori = $row['nama_kategori'];
 					$jumlah_per_kategoris = getJumlahKategoriTransaksi($po_fak,$row_kategori);
@@ -100,11 +101,12 @@ if($jumlah_tabung==""){
 			  	<td><?php echo $row_kategori; ?></td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?></td>
 			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
-			    <td><?php echo $jumlah_per_kategori * $harga_jual_faktur;?></td>
+			    <td><?php $total += $jumlah_per_kategori * $harga_jual_faktur; echo $total;?></td>
 			  </tr>				
 			<?php
 					endif;
 				endforeach;
+				echo $total;
 			  ?>
 
 			</table>

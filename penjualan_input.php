@@ -71,14 +71,14 @@ foreach ($kategoris as $row):
 //	}
 endforeach;
 
-$transaksi_from_po = getTransaksiFromPO($po_fak);
+$kategori_from_po = getKategoriFromPO($po_fak);
 
-foreach($transaksi_from_po as $transaksi_row):
-	var_dump($transaksi_row);
+foreach($kategori_from_po as $kategori_row):
+	var_dump($kategori_row);
 endforeach;
 
 ?>
-<form name="input_penjualan" method="post" action="">
+<form name="edit_faktur" method="post" action="edit_faktur.php">
 	<div id="po" style="">
 		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:9px;">
 			<h3>Toko Sumber Mas</h3>

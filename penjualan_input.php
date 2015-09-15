@@ -69,11 +69,14 @@ foreach ($kategoris as $row):
 	for ($i=1; $i<=$jumlah_tabung; $i++) {
 		$no_seri_barang = $_POST['pilih_barang_'.$i.''];
 		$kategoris_barang = getDataKategoriBarang($no_seri_barang);
-		//var_dump($kategoris_barang[0]['kategori']);
-		${'jumlah_'.$nama_kategori} = $no_seri_barang;
-		echo $jumlah_nama_kategori;
+		$kategori_barang = $kategoris_barang[0]['kategori'];
+		if ($nama_kategori == $kategori_barang)
+			$count[$nama_kategori] = $no_seri_barang;
+		}
 	}
 endforeach;
+
+var_dump($count);
 
 
 ?>

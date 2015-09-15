@@ -58,24 +58,12 @@ if($jumlah_tabung==""){
 $barang = getDataOneBarang();
 $harga_jual_faktur = $barang[0]['harga_jual'];
 
-$kategoris = getKategori();
-foreach ($kategoris as $row):
-//	$nama_kategori = $row['nama_kategori'];
-//	for ($i=1; $i<=$jumlah_tabung; $i++) {
-//		$no_seri_barang = $_POST['pilih_barang_'.$i.''];
-//		$kategoris_barang = getDataKategoriBarang($no_seri_barang);
-//		$kategori_barang = $kategoris_barang[0]['kategori'];
-//		if ($nama_kategori == $kategori_barang)
-//			$count[$nama_kategori] = $no_seri_barang;
-//		}
-//	}
-endforeach;
 
-$kategori_from_po = getKategoriFromPO($po_fak);
+//$kategori_from_po = getKategoriFromPO($po_fak);
 
-foreach($kategori_from_po as $kategori_row):
-	var_dump($kategori_row);
-endforeach;
+//foreach($kategori_from_po as $kategori_row):
+//	var_dump($kategori_row);
+//endforeach;
 
 ?>
 <form name="edit_faktur" method="post" action="edit_faktur.php">
@@ -97,6 +85,12 @@ endforeach;
 			    <th style="text-align:center;border-right:1px solid black;">Harga Satuan</th>
 			    <th style="text-align:center;">Total Harga</th>
 			  </tr>
+			  <?php
+				$kategoris = getKategori();
+				foreach ($kategoris as $row):
+					var_dump($kategoris);
+				endforeach;
+			  ?>
 			  <tr>
 			  	<td>Tabung Oksigen</td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_tabung;?></td>

@@ -94,7 +94,7 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 					//var_dump($jumlah_per_kategoris[0]['COUNT(*)']);
 					if($jumlah_per_kategori != "0"):
 						$hargas = getHargaBarangKategori($row_kategori);
-						var_dump($hargas);
+						var_dump($hargas[0]['harga_jual']);
 			?>	
 			  <tr>
 			  	<td><?php echo $row_kategori; ?></td>

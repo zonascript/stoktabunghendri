@@ -65,13 +65,13 @@ if ($harga_khusus != ""){
 $kategoris = getKategori();
 
 foreach ($kategoris as $row):
-	//echo $row['nama_kategori'];
+	$nama_kategori = $row['nama_kategori'];
 	for ($i=1; $i<=$jumlah_tabung; $i++) {
 		$no_seri_barang = $_POST['pilih_barang_'.$i.''];
 		$kategoris_barang = getDataKategoriBarang($no_seri_barang);
 		//var_dump($kategoris_barang[0]['kategori']);
 		${'jumlah_'.row['nama_kategori']} = $no_seri_barang;
-		echo ${'jumlah_'.row['nama_kategori']};
+		echo ${'jumlah_'.$nama_kategori};
 	}
 endforeach;
 

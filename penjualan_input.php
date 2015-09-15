@@ -91,7 +91,7 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 					$row_kategori = $row['nama_kategori'];
 					$jumlah_per_kategoris = getJumlahKategoriTransaksi($po_fak,$row_kategori);
 					$jumlah_per_kategori = $jumlah_per_kategoris[0]['COUNT(*)'];
-					var_dump($jumlah_per_kategoris[0]['COUNT(*)']);
+					//var_dump($jumlah_per_kategoris[0]['COUNT(*)']);
 					if($jumlah_per_kategori != "0"):
 						$hargas = getHargaBarangKategori($row_kategori);
 						var_dump($hargas);

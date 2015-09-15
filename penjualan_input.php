@@ -65,7 +65,7 @@ if ($harga_khusus != ""){
 $kategoris = getKategori();
 $baris = array();
 foreach ($kategoris as $row):
-	$baris = array_push($row['nama_kategori'] => '1');
+	$baris = array_push($baris, $row['nama_kategori'] => '1');
 //	$nama_kategori = $row['nama_kategori'];
 //	for ($i=1; $i<=$jumlah_tabung; $i++) {
 //		$no_seri_barang = $_POST['pilih_barang_'.$i.''];

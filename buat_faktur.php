@@ -25,7 +25,6 @@ for ($i=1; $i<=$jumlah_tabung; $i++) {
 	<option value='<?php echo $row['no_seri'];?>'><?php echo $row['no_seri'];?></option>
 	<?php endforeach;?>
 	</select></div>
-	<input type="text" name="kategori_tabung_<?php echo $i;?>" value="<?php echo $barangs[0]['kategori'];?>"/>
 <?php 
 }
 ?>

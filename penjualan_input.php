@@ -73,7 +73,7 @@ endforeach;
 
 $transaksi_from_po = getTransaksiFromPO($po_fak);
 
-var_dump($po_fak);
+var_dump($transaksi_from_po);
 
 ?>
 <form name="input_penjualan" method="post" action="">

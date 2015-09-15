@@ -37,7 +37,7 @@ $alamat = $_POST['alamat'];
 $no_telp = $_POST['no_telp'];
 $status = $_POST['status'];
 $jumlah_tabung = $_POST['jumlah_tabung'];
-$harga_khusus = $_POST['harga_khusus'];
+//$harga_khusus = $_POST['harga_khusus'];
 
 if($jumlah_tabung==""){
 	echo "Tidak ada tabung yang dipilih";
@@ -46,21 +46,15 @@ if($jumlah_tabung==""){
 		 if ($_POST['pilih_barang_'.$i.'']==""){
 		 	echo "Tabung ke $i belum diisi<br/>";
 		 } else {
-		 	//$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
-		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$tanggal,$nama_cust,$alamat,$status);
-		 	//updateBarangKeluar($nomor_seri_tabung);
+		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
+		 	inputTransaksi($po_fak,$nomor_seri_tabung,$tanggal,$nama_cust,$alamat,$status);
+		 	updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }
 
 $barang = getDataOneBarang();
-if ($harga_khusus != ""){
-	$harga_jual_faktur = $harga_khusus;
-//	echo "haga khusus";
-} else {
-	$harga_jual_faktur = $barang[0]['harga_jual'];
-//	echo "tidak ada harga khusus";
-}
+$harga_jual_faktur = $barang[0]['harga_jual'];
 
 $kategoris = getKategori();
 foreach ($kategoris as $row):

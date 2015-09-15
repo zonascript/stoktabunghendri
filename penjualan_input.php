@@ -70,8 +70,8 @@ foreach ($kategoris as $row):
 		$no_seri_barang = $_POST['pilih_barang_'.$i.''];
 		$kategoris_barang = getDataKategoriBarang($no_seri_barang);
 		//var_dump($kategoris_barang[0]['kategori']);
-		echo $row['nama_kategori'] $no_seri_barang;
-		
+		${'jumlah_'.row['nama_kategori']} = $no_seri_barang;
+		echo ${'jumlah_'.row['nama_kategori']};
 	}
 endforeach;
 

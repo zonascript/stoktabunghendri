@@ -64,19 +64,20 @@ if ($harga_khusus != ""){
 
 $kategoris = getKategori();
 
-foreach ($kategoris as $row):
-	$nama_kategori = $row['nama_kategori'];
-	for ($i=1; $i<=$jumlah_tabung; $i++) {
-		$no_seri_barang = $_POST['pilih_barang_'.$i.''];
-		$kategoris_barang = getDataKategoriBarang($no_seri_barang);
-		$kategori_barang = $kategoris_barang[0]['kategori'];
-		if ($nama_kategori == $kategori_barang)
-			$count[$nama_kategori] = $no_seri_barang;
-		}
-	}
+foreach ($kategoris as $key => $value):
+	var_dump($key);
+//	$nama_kategori = $row['nama_kategori'];
+//	for ($i=1; $i<=$jumlah_tabung; $i++) {
+//		$no_seri_barang = $_POST['pilih_barang_'.$i.''];
+//		$kategoris_barang = getDataKategoriBarang($no_seri_barang);
+//		$kategori_barang = $kategoris_barang[0]['kategori'];
+//		if ($nama_kategori == $kategori_barang)
+//			$count[$nama_kategori] = $no_seri_barang;
+//		}
+//	}
 endforeach;
 
-var_dump($count);
+//var_dump($count);	
 
 
 ?>

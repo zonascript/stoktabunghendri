@@ -316,7 +316,7 @@ function getTanggalTransaksiTerjual() {
 
 function getTransaksiRefillKeluar() {
 	$db = testdb_connect();
-//	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");
+//	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_transaksi ASC");
 	$stmt = $db->query("SELECT * FROM transaksi_refil WHERE status = 'refill' ORDER BY no_transaksi ASC");
 	//$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -325,8 +325,7 @@ function getTransaksiRefillKeluar() {
 
 function getTransaksiFromPO($a) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("SELECT * FROM transaksi WHERE no_po = :field1 ORDER BY no_id ASC");
-//	$stmt = $db->prepare("SELECT * FROM transaksi_refil WHERE status = 'refill' ORDER BY no_transaksi ASC");
+	$stmt = $db->prepare("SELECT * FROM transaksi WHERE transaksi.no_po = :field1 ORDER BY no_id ASC");
 	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

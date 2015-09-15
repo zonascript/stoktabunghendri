@@ -323,10 +323,10 @@ function getTransaksiRefillKeluar() {
 	return($fetch_array);
 }
 
-function inputTransaksi($a,$b,$c,$d,$e,$f) {
+function inputTransaksi($a,$b,$c,$d,$e,$f,$g) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("INSERT INTO transaksi (no_po,no_seri,tgl_keluar,nama_cust,alamat,status) VALUES(:field1,:field2,:field3,:field4,:field5,:field6)");
-	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d, ':field5' => $e, ':field6' => $f));
+	$stmt = $db->prepare("INSERT INTO transaksi (no_po,no_seri,kategori,tgl_keluar,nama_cust,alamat,status) VALUES(:field1,:field2,:field3,:field4,:field5,:field6,:field7)");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c, ':field4' => $d, ':field5' => $e, ':field6' => $f, ':field7' => $g));
 	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($affected_rows);
 }

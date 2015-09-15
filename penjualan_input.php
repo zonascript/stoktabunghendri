@@ -47,8 +47,10 @@ if($jumlah_tabung==""){
 		 	echo "Tabung ke $i belum diisi<br/>";
 		 } else {
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
-		 	inputTransaksi($po_fak,$nomor_seri_tabung,$tanggal,$nama_cust,$alamat,$status);
-		 	updateBarangKeluar($nomor_seri_tabung);
+			$kategori = $_POST['kategori_tabung_'.$i.''];
+			echo $kategori;
+		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
+		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }

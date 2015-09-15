@@ -48,9 +48,9 @@ if($jumlah_tabung==""){
 		 } else {
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
 			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
-			var_dump($kategoris[0]['kategori']);
-		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
-		 	//updateBarangKeluar($nomor_seri_tabung);
+			$kategori = $kategoris[0]['kategori'];
+		 	inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
+		 	updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }
@@ -71,8 +71,9 @@ foreach ($kategoris as $row):
 //	}
 endforeach;
 
-//$transaksi_from_po = getTransaksiFromPO($po_fak);
+$transaksi_from_po = getTransaksiFromPO($po_fak);
 
+var_dump($transaksi_from_po);
 
 ?>
 <form name="input_penjualan" method="post" action="">

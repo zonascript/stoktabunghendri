@@ -88,7 +88,8 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 			  <?php
 				$kategoris = getKategori();
 				foreach ($kategoris as $row):
-					$jumlah_per_kategori = getJumlahKategoriTransaksi($po_fak,$row['nama_kategori']);
+					$row_kategori = $row['nama_kategori'];
+					$jumlah_per_kategori = getJumlahKategoriTransaksi($po_fak,$row_kategori);
 					var_dump($jumlah_per_kategori);
 				endforeach;
 			  ?>

@@ -331,6 +331,14 @@ function getKategoriFromPO($a) {
 	return($fetch_array);
 }
 
+function getJumlahKategoriTransaksi($a,$b) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("SELECT COUNT(*) FROM transaksi WHERE transaksi.no_po=:field1 AND transaksi.kategori=:field2 ORDER BY no_transaksi ASC");
+	$stmt->execute(array(':field1' => $a, :field2' => $b));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function inputTransaksi($a,$b,$c,$d,$e,$f,$g) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("INSERT INTO transaksi (no_po,no_seri,kategori,tgl_keluar,nama_cust,alamat,status) VALUES(:field1,:field2,:field3,:field4,:field5,:field6,:field7)");

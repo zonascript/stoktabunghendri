@@ -246,7 +246,7 @@ function getBarang() {
 
 function getHargaBarangKategori($a) {
 	$db = testdb_connect();
-	$stmt = $db->query("SELECT DISTINCT harga_jual FROM barang WHERE barang.kategori = :field1 ORDER BY no_id ASC");
+	$stmt = $db->prepare("SELECT DISTINCT harga_jual FROM barang WHERE barang.kategori = :field1 ORDER BY no_id ASC");
 	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

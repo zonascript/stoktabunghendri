@@ -55,11 +55,11 @@ if($jumlah_tabung==""){
 
 $barang = getDataOneBarang();
 if ($harga_khusus != ""){
-	$harga_jual_faktur = $harga_khusus;
-	echo "haga khusus";
+//	$harga_jual_faktur = $harga_khusus;
+//	echo "haga khusus";
 } else {
-	$harga_jual_faktur = $barang[0]['harga_jual'];
-	echo "tidak ada harga khusus";
+//	$harga_jual_faktur = $barang[0]['harga_jual'];
+//	echo "tidak ada harga khusus";
 }
 
 for ($i=1; $i<=$jumlah_tabung; $i++) {

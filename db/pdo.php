@@ -323,6 +323,15 @@ function getTransaksiRefillKeluar() {
 	return($fetch_array);
 }
 
+function getTransaksiFromPO($a) {
+	$db = testdb_connect();
+//	$stmt = $db->query("SELECT * FROM transaksi WHERE no_po = :field1 ORDER BY no_id ASC");
+	$stmt = $db->prepare("SELECT * FROM transaksi_refil WHERE status = 'refill' ORDER BY no_transaksi ASC");
+	$stmt->execute(array(':field1' => $a));
+	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($fetch_array);
+}
+
 function inputTransaksi($a,$b,$c,$d,$e,$f,$g) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("INSERT INTO transaksi (no_po,no_seri,kategori,tgl_keluar,nama_cust,alamat,status) VALUES(:field1,:field2,:field3,:field4,:field5,:field6,:field7)");

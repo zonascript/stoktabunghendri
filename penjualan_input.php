@@ -47,8 +47,8 @@ if($jumlah_tabung==""){
 		 	echo "Tabung ke $i belum diisi<br/>";
 		 } else {
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
-			$kategori = $_POST['kategori_tabung_'.$i.''];
-			echo $kategori;
+			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
+			var_dump($kategoris);
 		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
 		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }
@@ -71,6 +71,7 @@ foreach ($kategoris as $row):
 //	}
 endforeach;
 
+//$transaksi_from_po = getTransaksiFromPO($po_fak);
 
 
 ?>

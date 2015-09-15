@@ -325,7 +325,7 @@ function getTransaksiRefillKeluar() {
 
 function getTransaksiFromPO($a) {
 	$db = testdb_connect();
-	$stmt = $db->prepare("SELECT * FROM transaksi WHERE transaksi.no_po = :field1 ORDER BY no_id ASC");
+	$stmt = $db->prepare("SELECT * FROM transaksi WHERE transaksi.no_po=:field1 ORDER BY no_transaksi ASC");
 	$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

@@ -89,16 +89,20 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 				$kategoris = getKategori();
 				foreach ($kategoris as $row):
 					$row_kategori = $row['nama_kategori'];
-					$jumlah_per_kategori = getJumlahKategoriTransaksi($po_fak,$row_kategori);
-					var_dump($jumlah_per_kategori[0]['COUNT(*)']);
-				endforeach;
-			  ?>
+					$jumlah_per_kategoris = getJumlahKategoriTransaksi($po_fak,$row_kategori);
+					$jumlah_per_kategori = $jumlah_per_kategoris[0]['COUNT(*)']);
+					if($jumlah_per_kategori != "0"):
+			?>	
 			  <tr>
-			  	<td>Tabung Oksigen</td>
-			    <td style="border-right:1px solid black;"><?php echo $jumlah_tabung;?></td>
+			  	<td><?php echo $nama_kategori; ?></td>
+			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?></td>
 			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
 			    <td><?php echo $jumlah_tabung * $harga_jual_faktur;?></td>
-			  </tr>
+			  </tr>				
+			<?php
+					endif;
+				endforeach;
+			  ?>
 			</table>
 		</div>
 		<div class="ttd-author">

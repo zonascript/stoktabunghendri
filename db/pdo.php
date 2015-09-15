@@ -334,7 +334,7 @@ function getKategoriFromPO($a) {
 function getJumlahKategoriTransaksi($a,$b) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("SELECT COUNT(*) FROM transaksi WHERE transaksi.no_po=:field1 AND transaksi.kategori=:field2 ORDER BY no_transaksi ASC");
-	$stmt->execute(array(':field1' => $a, :field2' => $b));
+	$stmt->execute(array(':field1' => $a, ':field2' => $b));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);
 }

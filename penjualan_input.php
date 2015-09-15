@@ -91,12 +91,12 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 					$row_kategori = $row['nama_kategori'];
 					$jumlah_per_kategoris = getJumlahKategoriTransaksi($po_fak,$row_kategori);
 					$jumlah_per_kategori = $jumlah_per_kategoris[0]['COUNT(*)']);
-					if($jumlah_per_kategori != "0"):
+					//if($jumlah_per_kategori != "0"):
 						echo "halo";
 			?>	
 				
 			<?php
-					endif;
+					//endif;
 				endforeach;
 			  ?>
 			  <tr>

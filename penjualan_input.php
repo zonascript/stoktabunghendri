@@ -49,8 +49,8 @@ if($jumlah_tabung==""){
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
 			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
 			$kategori = $kategoris[0]['kategori'];
-		 	inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
-		 	updateBarangKeluar($nomor_seri_tabung);
+		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
+		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }
@@ -95,7 +95,7 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 					if($jumlah_per_kategori != "0"):
 			?>	
 			  <tr>
-			  	<td><?php $row_kategori; ?></td>
+			  	<td><?php echo $row_kategori; ?></td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?></td>
 			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
 			    <td><?php echo $jumlah_tabung * $harga_jual_faktur;?></td>

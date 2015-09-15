@@ -101,7 +101,7 @@ if($jumlah_tabung==""){
 			  	<td><?php echo $row_kategori; ?></td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?></td>
 			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
-			    <td><?php $total += $jumlah_per_kategori * $harga_jual_faktur; echo $total;?></td>
+			    <td><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?></td>
 			  </tr>				
 			<?php
 					endif;

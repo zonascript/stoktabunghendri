@@ -106,9 +106,12 @@ if($jumlah_tabung==""){
 			<?php
 					endif;
 				endforeach;
-				echo $total;
+		//		echo $total;
 			  ?>
-
+			  <tr>
+			  	<td colspan="3" style="border-right:1px solid black;">Total</td>
+			    <td><?php echo $total;?></td>
+			  </tr>	
 			</table>
 		</div>
 		<div class="ttd-author">

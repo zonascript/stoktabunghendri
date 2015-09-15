@@ -88,7 +88,7 @@ $harga_jual_faktur = $barang[0]['harga_jual'];
 			  <?php
 				$kategoris = getKategori();
 				foreach ($kategoris as $row):
-					var_dump($kategoris);
+					var_dump($row['nama_kategori']);
 				endforeach;
 			  ?>
 			  <tr>

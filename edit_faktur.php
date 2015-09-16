@@ -173,9 +173,9 @@ include 'header.php';
 		{
 			for (i = 1; i < 5; i++) {
 				
-				total += document.getElementById("jumlah_per_kategori_"+[i]).innerHTML;;
+				total += document.getElementById("jumlah_harga_"+[i]).innerHTML;;
 			}
-			document.write(total);
+			alert(total);
 		}
     </script>
     

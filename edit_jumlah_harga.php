@@ -6,5 +6,6 @@ $jumlah_tabung = $_GET['jumlah_tabung'];
 
 //$barangs = getBarangAvail();
 //$customers = getCustomer();
-echo $harga_faktur * $jumlah_tabung;
+echo $harga_faktur;
+echo $jumlah_tabung;
 ?>

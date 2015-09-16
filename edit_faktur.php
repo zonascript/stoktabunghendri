@@ -39,23 +39,7 @@ $status = $_POST['status'];
 $jumlah_tabung = $_POST['jumlah_tabung'];
 //$harga_khusus = $_POST['harga_khusus'];
 
-echo $po_fak;
 
-if($jumlah_tabung==""){
-//	echo "Tidak ada tabung yang dipilih";
-} else {
-	for ($i=1; $i<=$jumlah_tabung; $i++) {
-		 if ($_POST['pilih_barang_'.$i.'']==""){
-		 	echo "Tabung ke $i belum diisi<br/>";
-		 } else {
-		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
-			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
-			$kategori = $kategoris[0]['kategori'];
-		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
-		 	//updateBarangKeluar($nomor_seri_tabung);
-		 }
-	}
-}
 
 //$barang = getDataOneBarang();
 //$harga_jual_faktur = $barang[0]['harga_jual'];
@@ -103,7 +87,7 @@ if($jumlah_tabung==""){
 			  <tr>
 			  	<td><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?><input type="hidden" name="jumlah_per_kategori_<?php echo $i;?>" value="<?php echo $jumlah_per_kategori ?>"/></td>
-			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?><input type="hidden" name="harga_jual_faktur_<?php echo $i;?>" value="<?php echo $harga_jual_faktur ?>"/></td>
+			    <td style="border-right:1px solid black;"><input type="text" name="harga_jual_faktur_<?php echo $i;?>" value="<?php echo $harga_jual_faktur ?>"/></td>
 			    <td><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></td>
 			  </tr>				
 			<?php

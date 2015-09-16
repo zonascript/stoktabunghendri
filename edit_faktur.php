@@ -150,6 +150,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 			  </tr>				
 			<?php
 					endif;
+					$i += $i;
 				endforeach;
 		//		echo $total;
 			  ?>

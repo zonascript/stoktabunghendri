@@ -171,9 +171,10 @@ include 'header.php';
 		
 		function Total()
 		{
+			//total = document.getElementById("jumlah_per_kategori_1").innerHTML;
 			for (i = 1; i < 5; i++) {
 				
-				total += document.getElementById("jumlah_harga_"+[i]).innerHTML;;
+				total += document.getElementById("jumlah_harga_"+[i]).innerHTML;
 			}
 			alert(total);
 		}

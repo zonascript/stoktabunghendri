@@ -227,13 +227,14 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 					$jumlah_per_kategori = $jumlah_per_kategoris[0]['COUNT(*)'];
 					//var_dump($jumlah_per_kategoris[0]['COUNT(*)']);
 					if($jumlah_per_kategori != "0"):
-						$hargas = getHargaBarangKategori($row_kategori);
-						$harga_jual_faktur = $hargas[0]['harga_jual'];
+						//$hargas = getHargaBarangKategori($row_kategori);
+						//$harga_jual_faktur = $hargas[0]['harga_jual'];
+						$harga_jual_faktur = $_POST['harga_jual_faktur_$i'];
 			?>	
 			  <tr>
 			  	<td><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>
 			    <td style="border-right:1px solid black;"><div id="jumlah_per_kategori_<?php echo $i;?>"><?php echo $jumlah_per_kategori;?></div><input type="hidden" name="jumlah_per_kategori_<?php echo $i;?>" value="<?php echo $jumlah_per_kategori ?>"/></td>
-			    <td style="border-right:1px solid black;"><input type="text" name="harga_jual_faktur_<?php echo $i;?>" value="<?php echo $harga_jual_faktur ?>" onchange="editJumlah<?php echo $i;?>(this.value)"/></td>
+			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
 			    <td><div id="jumlah_harga_<?php echo $i;?>"><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></div></td>
 			  </tr>				
 			<?php

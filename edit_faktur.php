@@ -251,7 +251,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 		//		echo $total;
 			  ?>
 			  <tr>
-			  	<td colspan="3" style="border-right:1px solid black;">Total <input type="button" name="submit" value="Total Ulang" onclick="Total()"/></td>
+			  	<td colspan="3" style="border-right:1px solid black;">Total <input type="button" name="submit" value="Total Ulang" onclick="javascript:Total()"/></td>
 			    <td><?php echo $total;?></td>
 			  </tr>	
 			</table>

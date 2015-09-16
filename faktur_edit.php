@@ -199,7 +199,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 //endforeach;
 
 ?>
-<form name="faktur_edit" method="post" action="faktur_edit.php">
+<form name="faktur_edit" method="post" action="">
 	<div id="po" style="">
 		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:9px;">
 			<h3>Toko Sumber Mas</h3>
@@ -244,6 +244,10 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 				endforeach;
 		//		echo $total;
 			  ?>
+			<tr>
+			  	<td colspan="3" style="border-right:1px solid black;">Total</td>
+			    <td><?php echo $total;?></td>
+			  </tr>	
 			</table>
 		</div>
 		<div class="ttd-author">
@@ -260,7 +264,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 	</div>
 	</div>
 	<div class="button" style="margin:auto; margin-top:3%;">
-		<input type="submit" name="submit" value="Proses Struk"/>
+		<input type="button" name="submit" value="Cetak Faktur" onclick="javascript:printDiv('po')"/>
 	</div>
 	</form>
 

@@ -27,8 +27,8 @@ include 'header.php';
 		function editJumlah1(str1)
 		{
 		var xmlhttp;    
-		//var str2 = document.getElementById("jumlah_per_kategori_1");
-		alert(str2.innerHTML);
+		var str2 = document.getElementById("jumlah_per_kategori_1");
+		//alert(str2.innerHTML);
 		if (str1=="")
 		  {
 		  document.getElementById("jumlah_harga_1").innerHTML="";

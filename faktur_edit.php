@@ -201,16 +201,15 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 ?>
 <form name="faktur_edit" method="post" action="">
 	<div id="po" style="">
-		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:9px;">
+		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:8px;font-size:12px;">
 			<h3>Toko Sumber Mas</h3>
 			<div class="title">Nomor Faktur: <?php echo $po_fak;?> <input type="hidden" name="po_fak" value="<?php echo $po_fak;?>"/></div>
-			<div class="title" style="text-align: left; margin-left: 30px; margin-top:3%;">Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>
+			<div class="title" style="text-align: left; margin-left: 30px; margin-top:1%;">Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>
 		<div id="txtHintCustomer">
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nama : <?php echo $nama_cust;?><input type="hidden" name="nama_cust" value="<?php echo $nama_cust ?>"/></div>
-			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Alamat : <?php echo $alamat;?><input type="hidden" name="alamat" value="<?php echo $alamat ?>"/></div>
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nomor Telepon : <?php echo $no_telp;?><input type="hidden" name="no_telp" value="<?php echo $no_telp ?>"/></div>
 		</div>
-		<div class="table" style="border:1px solid black;margin-top:3%;margin-bottom:3%;text-align:center;">
+		<div class="table" style="border:1px solid black;margin-top:1%;margin-bottom:1%;text-align:center;">
 			<table id="mytable" border="1" cellpadding="10" cellspacing="0" width="100%">
 				<tr>
 			    <th style="text-align:center;">Nama Barang</th>
@@ -233,10 +232,10 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 						$harga_jual_faktur = $_POST['harga_jual_faktur_'.$i.''];
 			?>	
 			  <tr>
-			  	<td><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>
-			    <td style="border-right:1px solid black;"><div id="jumlah_per_kategori_<?php echo $i;?>"><?php echo $jumlah_per_kategori;?></div><input type="hidden" name="jumlah_per_kategori_<?php echo $i;?>" value="<?php echo $jumlah_per_kategori ?>"/></td>
-			    <td style="border-right:1px solid black;"><?php echo $harga_jual_faktur;?></td>
-			    <td><div id="jumlah_harga_<?php echo $i;?>"><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></div></td>
+			  	<td style="border-top: 1px solid black;"><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>
+			    <td style="border-right:1px solid black;border-top: 1px solid black;"><div id="jumlah_per_kategori_<?php echo $i;?>"><?php echo $jumlah_per_kategori;?></div><input type="hidden" name="jumlah_per_kategori_<?php echo $i;?>" value="<?php echo $jumlah_per_kategori ?>"/></td>
+			    <td style="border-right:1px solid black;border-top: 1px solid black;"><?php echo $harga_jual_faktur;?></td>
+			    <td style="border-top: 1px solid black;"><div id="jumlah_harga_<?php echo $i;?>"><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></div></td>
 			  </tr>				
 			<?php
 					endif;

@@ -44,6 +44,8 @@ table {
 }
 
 @media print {
+	h3 {font-size:14px;}
+	font-size: 10px !important;
 	width: 712px;
 	height: 825px;
 	#header, #footer { display: none !important; }
@@ -53,4 +55,5 @@ table {
 	/*margin-top: -20px;*/
 	margin: 0 auto !important;
 	padding: 0;
+	body{margin:0px;}
 }

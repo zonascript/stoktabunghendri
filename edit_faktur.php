@@ -28,7 +28,8 @@ include 'header.php';
 		{
 		var xmlhttp;    
 		var str2 = document.getElementById("jumlah_per_kategori_1");
-		if (str=="")
+		alert(str2.innerHTML);
+		if (str1=="")
 		  {
 		  document.getElementById("jumlah_harga_1").innerHTML="";
 		  return;

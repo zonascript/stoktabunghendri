@@ -24,7 +24,7 @@ include 'header.php';
           
         }
 		
-		function editJumlah1(str)
+		function editJumlah1(str1,str2)
 		{
 		var xmlhttp;    
 		if (str=="")
@@ -47,7 +47,7 @@ include 'header.php';
 			document.getElementById("jumlah_harga_1").innerHTML=xmlhttp.responseText;
 			}
 		  }
-		xmlhttp.open("GET","edit_jumlah_harga.php?harga_faktur="+str,true);
+		xmlhttp.open("GET","edit_jumlah_harga.php?harga_faktur="+str1+"&jumlah_tabung="+str2,true);
 		xmlhttp.send();
 		}
     </script>
@@ -114,7 +114,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 			  <tr>
 			  	<td><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?><input type="hidden" name="jumlah_per_kategori_<?php echo $i;?>" value="<?php echo $jumlah_per_kategori ?>"/></td>
-			    <td style="border-right:1px solid black;"><input type="text" name="harga_jual_faktur_<?php echo $i;?>" value="<?php echo $harga_jual_faktur ?>" onchange="editJumlah<?php echo $i;?>(this.value)"/></td>
+			    <td style="border-right:1px solid black;"><input type="text" name="harga_jual_faktur_<?php echo $i;?>" value="<?php echo $harga_jual_faktur ?>" onchange="editJumlah<?php echo $i;?>(this.value,<?php echo $jumlah_per_kategori;?>)"/></td>
 			    <td><div id="jumlah_harga_<?php echo $i;?>"><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></div></td>
 			  </tr>				
 			<?php

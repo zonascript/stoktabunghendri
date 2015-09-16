@@ -81,6 +81,102 @@ include 'header.php';
 		xmlhttp.open("GET","edit_jumlah_harga.php?harga_faktur="+str1+"&jumlah_tabung="+str2,true);
 		xmlhttp.send();
 		}
+		
+		function editJumlah3(str1)
+		{
+		var xmlhttp;    
+		var str2 = document.getElementById("jumlah_per_kategori_3").innerHTML;
+		//alert(str2.innerHTML);
+		if (str1=="")
+		  {
+		  document.getElementById("jumlah_harga_3").innerHTML="";
+		  return;
+		  }
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			document.getElementById("jumlah_harga_3").innerHTML=xmlhttp.responseText;
+			}
+		  }
+		xmlhttp.open("GET","edit_jumlah_harga.php?harga_faktur="+str1+"&jumlah_tabung="+str2,true);
+		xmlhttp.send();
+		}
+		
+		function editJumlah4(str1)
+		{
+		var xmlhttp;    
+		var str2 = document.getElementById("jumlah_per_kategori_4").innerHTML;
+		//alert(str2.innerHTML);
+		if (str1=="")
+		  {
+		  document.getElementById("jumlah_harga_4").innerHTML="";
+		  return;
+		  }
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			document.getElementById("jumlah_harga_4").innerHTML=xmlhttp.responseText;
+			}
+		  }
+		xmlhttp.open("GET","edit_jumlah_harga.php?harga_faktur="+str1+"&jumlah_tabung="+str2,true);
+		xmlhttp.send();
+		}
+		
+		function editJumlah5(str1)
+		{
+		var xmlhttp;    
+		var str2 = document.getElementById("jumlah_per_kategori_5").innerHTML;
+		//alert(str2.innerHTML);
+		if (str1=="")
+		  {
+		  document.getElementById("jumlah_harga_5").innerHTML="";
+		  return;
+		  }
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			document.getElementById("jumlah_harga_5").innerHTML=xmlhttp.responseText;
+			}
+		  }
+		xmlhttp.open("GET","edit_jumlah_harga.php?harga_faktur="+str1+"&jumlah_tabung="+str2,true);
+		xmlhttp.send();
+		}
+		
+		function Total()
+		{
+			for (i = 1; i < 5; i++) {
+				
+				total += document.getElementById("jumlah_per_kategori_"+[i]).innerHTML;;
+			}
+			document.write(total);
+		}
     </script>
     
 <div class="container">
@@ -110,7 +206,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 //endforeach;
 
 ?>
-<form name="edit_faktur" method="post" action="edit_faktur.php">
+<form name="faktur_edit" method="post" action="faktur_edit.php">
 	<div id="po" style="">
 		<div class="container" style="text-align:center;margin-top:-20px;letter-spacing:9px;">
 			<h3>Toko Sumber Mas</h3>
@@ -155,7 +251,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 		//		echo $total;
 			  ?>
 			  <tr>
-			  	<td colspan="3" style="border-right:1px solid black;">Total <input type="button" name="submit" value="Total Ulang" onclick=""/></td>
+			  	<td colspan="3" style="border-right:1px solid black;">Total <input type="button" name="submit" value="Total Ulang" onclick="Total()"/></td>
 			    <td><?php echo $total;?></td>
 			  </tr>	
 			</table>
@@ -174,7 +270,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 	</div>
 	</div>
 	<div class="button" style="margin:auto; margin-top:3%;">
-		<input type="button" name="submit" value="Cetak Faktur" onclick="javascript:printDiv('po')"/> atau <input type="submit" name="submit" value="Beri Diskon"/>
+		<input type="submit" name="submit" value="Proses Struk"/>
 	</div>
 	</form>
 

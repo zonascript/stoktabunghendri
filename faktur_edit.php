@@ -1,6 +1,8 @@
 <?php
 include 'header.php';
 
+echo $_POST['harga_jual_faktur_1'];
+
 ?>
 
 <script language="javascript" type="text/javascript">

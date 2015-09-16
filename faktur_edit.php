@@ -229,7 +229,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 					if($jumlah_per_kategori != "0"):
 						//$hargas = getHargaBarangKategori($row_kategori);
 						//$harga_jual_faktur = $hargas[0]['harga_jual'];
-						$harga_jual_faktur = $_POST['harga_jual_faktur_$i'];
+						$harga_jual_faktur = $_POST['harga_jual_faktur_i'];
 			?>	
 			  <tr>
 			  	<td><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>

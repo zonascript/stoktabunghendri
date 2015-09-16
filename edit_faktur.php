@@ -88,7 +88,7 @@ $jumlah_tabung = $_POST['jumlah_tabung'];
 			  	<td><?php echo $row_kategori; ?><input type="hidden" name="nama_kategori_<?php echo $i;?>" value="<?php echo $row_kategori ?>"/></td>
 			    <td style="border-right:1px solid black;"><?php echo $jumlah_per_kategori;?><input type="hidden" name="jumlah_per_kategori_<?php echo $i;?>" value="<?php echo $jumlah_per_kategori ?>"/></td>
 			    <td style="border-right:1px solid black;"><input type="text" name="harga_jual_faktur_<?php echo $i;?>" value="<?php echo $harga_jual_faktur ?>"/></td>
-			    <td><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></td>
+			    <td><div id="jumlah_harga"><?php $jumlah = $jumlah_per_kategori * $harga_jual_faktur; $total +=$jumlah; echo $jumlah;?><input type="hidden" name="jumlah_<?php echo $i;?>" value="<?php echo $jumlah ?>"/></div></td>
 			  </tr>				
 			<?php
 					endif;

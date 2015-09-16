@@ -50,5 +50,7 @@ table {
 	page-break-after:always !important;
         display:table !important;
         margin:0 auto !important;
-	margin-top: -20px;
+	/*margin-top: -20px;*/
+	margin: 0 auto !important;
+	padding: 0;
 }

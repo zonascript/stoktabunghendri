@@ -47,6 +47,7 @@ include 'db/pdo.php';
         <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Penjualan <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
+				<li><a href="<?php echo $base_url;?>/lihat_transaksi.php">Lihat Transaksi Penjualan</a></li>
 	        	<li><a href="<?php echo $base_url;?>/penjualan.php">Input Penjualan</a></li>
 		        <li><a href="<?php echo $base_url;?>/retur.php">Retur Penjualan</a></li>
 		        <li><a href="<?php echo $base_url;?>/cek_faktur.php">Cek Faktur</a></li>

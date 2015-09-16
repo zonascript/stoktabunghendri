@@ -39,8 +39,10 @@ $status = $_POST['status'];
 $jumlah_tabung = $_POST['jumlah_tabung'];
 //$harga_khusus = $_POST['harga_khusus'];
 
+echo $po_fak;
+
 if($jumlah_tabung==""){
-	echo "Tidak ada tabung yang dipilih";
+//	echo "Tidak ada tabung yang dipilih";
 } else {
 	for ($i=1; $i<=$jumlah_tabung; $i++) {
 		 if ($_POST['pilih_barang_'.$i.'']==""){
@@ -49,8 +51,8 @@ if($jumlah_tabung==""){
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
 			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
 			$kategori = $kategoris[0]['kategori'];
-		 	inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
-		 	updateBarangKeluar($nomor_seri_tabung);
+		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
+		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }
 	}
 }

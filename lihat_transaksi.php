@@ -16,6 +16,7 @@ include 'header.php';
 	    <th>Nomor PO</th>
 	    <th>Nomor Seri</th>
 		<th>Kategori</th>
+		<th>Harga Jual</th>
 	    <th>Tanggal Keluar</th>
 	    <th>Tanggal Kembali</th>
 	    <th>Nama Customer</th>
@@ -46,6 +47,7 @@ include 'header.php';
 		echo "<td>".$row['no_po']."</td>";
 		echo "<td>".$row['no_seri']."</td>";
 		echo "<td>".$row['kategori']."</td>";
+		echo "<td>".$row['harga_jual']."</td>";
 		echo "<td>".$row['tgl_keluar']."</td>";
 		echo "<td>".$row['tgl_kembali']."</td>";
 		echo "<td>".$row['nama_cust']."</td>";

@@ -405,6 +405,14 @@ function updateTransaksiReturRefill($a,$b) {
 	return($fetch_array);
 }
 
+function updateHargaTransaksiByKategori($a,$b,$c) {
+	$db = testdb_connect();
+	$stmt = $db->prepare("UPDATE transaksi SET harga_jual=:field3 WHERE no_po=:field1 AND kategori=:field2");
+	$stmt->execute(array(':field1' => $a, ':field2' => $b, ':field3' => $c));
+	$affected_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return($affected_rows);
+}
+
 function deleteKategori($a) {
 	$db = testdb_connect();
 	$stmt = $db->prepare("DELETE FROM kategori WHERE id_kategori=:field1");

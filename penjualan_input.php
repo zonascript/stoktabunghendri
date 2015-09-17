@@ -49,7 +49,8 @@ if($jumlah_tabung==""){
 		 	$nomor_seri_tabung = $_POST['pilih_barang_'.$i.''];
 			$kategoris = getDataKategoriBarang($nomor_seri_tabung);
 			$kategori = $kategoris[0]['kategori'];
-			var_dump($kategori);
+			$harga_jual = getHargaBarangKategori($kategori);
+			var_dump($harga_jual);
 		 	//inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$tanggal,$nama_cust,$alamat,$status);
 		 	//updateBarangKeluar($nomor_seri_tabung);
 		 }

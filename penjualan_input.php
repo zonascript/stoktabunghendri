@@ -76,7 +76,6 @@ if($jumlah_tabung==""){
 			<div class="title" style="text-align: left; margin-left: 30px; margin-top:1%;">Tanggal : <?php echo date("Y/m/d") ?> <input type="hidden" name="tanggal" value="<?php echo date("Y/m/d") ?>"/></div>
 		<div id="txtHintCustomer">
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nama : <?php echo $nama_cust;?><input type="hidden" name="nama_cust" value="<?php echo $nama_cust ?>"/></div>
-			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Alamat : <?php echo $alamat;?><input type="hidden" name="alamat" value="<?php echo $alamat ?>"/></div>
 			<div class="cust_bio" style="text-align: left; margin-left: 30px;">Nomor Telepon : <?php echo $no_telp;?><input type="hidden" name="no_telp" value="<?php echo $no_telp ?>"/></div>
 		</div>
 		<div class="table" style="border:1px solid black;margin-top:1%;margin-bottom:1%;text-align:center;">

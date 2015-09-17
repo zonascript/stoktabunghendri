@@ -273,7 +273,7 @@ function getCustomer() {
 function getTransaksi() {
 	$db = testdb_connect();
 //	$stmt = $db->query("SELECT * FROM barang WHERE barang.status = 'Available' ORDER BY no_id ASC");
-	$stmt = $db->query("SELECT * FROM transaksi ORDER BY no_transaksi ASC");
+	$stmt = $db->query("SELECT * FROM transaksi ORDER BY no_transaksi DESC");
 	//$stmt->execute(array(':field1' => $a));
 	$fetch_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return($fetch_array);

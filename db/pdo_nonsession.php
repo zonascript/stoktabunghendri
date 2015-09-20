@@ -9,7 +9,7 @@ date_default_timezone_set("ASIA/MAKASSAR");
 global $transaksi;
 //$base_url = "http://localhost/stoktabunghendri";
 function testdb_connect() {
-$dbh = new PDO("mysql:host=localhost;dbname=stoktabungtmp", "root", "slamdunk23");
+$dbh = new PDO("mysql:host=localhost;dbname=stoktabung", "root", "slamdunk23");
      return ($dbh);
 }
 

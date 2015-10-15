@@ -7,25 +7,24 @@ $customers = getCustomer();
 
 ?>
 <div id='customer' class="inner-faktur-choice"><span>Customer : </span>
-<input type="text" name="pilih_customer" id="customer" list="datalist2" onchange="showCustomer(this.value)">
-	<datalist id="datalist2">
+	<select name="pilih_customer" id="customer" onchange="showCustomer(this.value)">
+	<option value=""></option>
 	<?php foreach($customers as $row) :?>
-	<option onclick="showCustomer(this.value)" value="<?php echo $row['nama_cust'];?>"><?php echo $row['nama_cust'];?></option>
+	<option value="<?php echo $row['nama_cust'];?>"><?php echo $row['nama_cust'];?></option>
 	<?php endforeach;?>
-	</datalist>
+	</select>
 </div>
 <?php 
 for ($i=1; $i<=$jumlah_tabung; $i++) {
 ?>
 
 <div id='tabung-$i' class="inner-faktur-choice"><span>Tabung ke <?php echo $i;?> : </span>
-	<input type="text" name="pilih_barang_<?php echo $i;?>" id="barang" list="datalist1">
-	<datalist id="datalist1">
-	  <?php foreach($barangs as $row) :?>
+	<select name='pilih_barang_<?php echo $i;?>' id='barang'>
+	<option value=''></option>
+	<?php foreach($barangs as $row) :?>
 	<option value='<?php echo $row['no_seri'];?>'><?php echo $row['no_seri'];?></option>
 	<?php endforeach;?>
-	</datalist>
-	</div>
+	</select></div>
 <?php 
 }
 ?>

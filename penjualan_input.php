@@ -51,6 +51,7 @@ if($jumlah_tabung==""){
 			$kategori = $kategoris[0]['kategori'];
 			$harga_juals = getHargaBarangKategori($kategori);
 			$harga_jual_input = $harga_juals[0]['harga_jual'];
+			//echo $harga_jual_input;
 		 	inputTransaksi($po_fak,$nomor_seri_tabung,$kategori,$harga_jual_input,$tanggal,$nama_cust,$alamat,$status);
 		 	updateBarangKeluar($nomor_seri_tabung);
 		 }

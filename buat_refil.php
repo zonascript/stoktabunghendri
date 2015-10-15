@@ -8,12 +8,13 @@ for ($i=1; $i<=$jumlah_tabung; $i++) {
 ?>
 
 <div id='tabung-$i' class="inner-faktur-choice"><span>Tabung ke <?php echo $i;?> : </span>
-	<select name='pilih_barang_<?php echo $i;?>' id='barang'>
-	<option value=''></option>
-	<?php foreach($barangs as $row) :?>
+	<input type="text" name="pilih_barang_<?php echo $i;?>" id="barang" list="datalist1">
+	<datalist id="datalist1">
+	  <?php foreach($barangs as $row) :?>
 	<option value='<?php echo $row['no_seri'];?>'><?php echo $row['no_seri'];?></option>
 	<?php endforeach;?>
-	</select></div>
+	</datalist>
+	</div>
 <?php 
 }
 ?>

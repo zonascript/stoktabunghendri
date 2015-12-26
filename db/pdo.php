@@ -2,7 +2,9 @@
 // koneksi ke database
 
 session_start();
-$base_url = "http://92.222.71.15/stoktabunghendri";
+//$base_url = "http://92.222.71.15/stoktabunghendri";  //old server
+$base_url = "http://104.255.68.151/stoktabunghendri";
+
 
 date_default_timezone_set("ASIA/MAKASSAR");
 

@@ -24,14 +24,14 @@ include 'header.php';
   </div>
   <div id="loginHint" class="text-center">
   <?php 
-  	$empty = $_GET['empty'];
+  	@$empty = $_GET['empty'];
   	if($empty=="username"){
   		echo "<span class='login_alert'>username belum diisi</span>";
   	}
   	elseif ($empty=="password"){
   		echo "<span class='login_alert'>password belum diisi</span>";
   	}
-  	$nopass = $_GET['nopass'];
+  	@$nopass = $_GET['nopass'];
   	if ($nopass==true) {
   		echo "<span class='login_alert'>password salah</span>";
   	}

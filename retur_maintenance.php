@@ -8,7 +8,10 @@ $transaksis= getTransaksiTerjual();
   
   <div class="text-center">
 
-	<form name="input_retur" method="post" action="retur_input.php">
+	<form name="input_retur" method="post" action="retur_input_maintenance.php">
+    
+    <div>Pengembalian Tanggal : <td><input type="text" name="tanggal"/></td></div><br /><br />
+    
 	<table border="1" cellpadding="10" cellspacing="0">
 	  <tr>
 	    <th>Nomor PO</th>

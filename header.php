@@ -60,11 +60,21 @@ include 'db/pdo.php';
 		        <li><a href="<?php echo $base_url;?>/retur_refill.php">Retur Refill Tabung</a></li>
 	        </ul>
         </li>
+        <li class="dropdown">
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintenance <b class="caret"></b></a>
+	        <ul class="dropdown-menu">
+	        	<li><a href="<?php echo $base_url;?>/penjualan_maintenance.php">Maintenance Input Penjualan</a></li>
+		        <li><a href="<?php echo $base_url;?>/retur_maintenance.php">Maintenance Retur Penjualan</a></li>
+		        <li><a href="<?php echo $base_url;?>/cek_faktur.php">Cek Faktur</a></li>
+	        </ul>
+        </li>
       </ul>
+        
+        
       <ul class="nav navbar-nav navbar-right">
         <!-- li><a href="#">About</a></li-->
         <?php 
-        if($_SESSION['permission']=="admin"){
+        if(isset($_SESSION['permission']) && ($_SESSION['permission']=="admin")){
         
         ?>
         	<li><a href="<?php echo $base_url;?>/create_user.php">Create User</a></li>

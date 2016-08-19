@@ -182,8 +182,8 @@ $tanggal = $_POST['tanggal'];
 $nama_cust = $_POST['nama_cust'];
 $alamat = $_POST['alamat'];
 $no_telp = $_POST['no_telp'];
-$status = $_POST['status'];
-$jumlah_tabung = $_POST['jumlah_tabung'];
+@$status = $_POST['status'];
+@$jumlah_tabung = $_POST['jumlah_tabung'];
 //$harga_khusus = $_POST['harga_khusus'];
 
 

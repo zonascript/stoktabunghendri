@@ -15,9 +15,9 @@ if(isset($no_seri)):
 endif;
 
 if(isset($retur)):
-	header("Location: $base_url/retur.php?retur=done");
+	header("Location: $base_url/retur_maintenance.php?retur=done");
 	//exit();
 else:
 	//echo "tidak ada barang dipilih untuk diretur!!!";
-	header("Location: $base_url/retur.php");
+	header("Location: $base_url/retur_maintenance.php");
 endif;

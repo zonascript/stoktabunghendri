@@ -10,7 +10,7 @@ $transaksis= getTransaksiTerjual();
 
 	<form name="input_retur" method="post" action="retur_input_maintenance.php">
     
-    <div>Pengembalian Tanggal : <td><input type="text" name="tanggal"/></td></div><br /><br />
+    <div>Pengembalian Tanggal : <input type="text" name="tanggal"/> (Contoh : 2016-08-17)</div><br /><br />
     
 	<table border="1" cellpadding="10" cellspacing="0">
 	  <tr>
